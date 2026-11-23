@@ -1,0 +1,54 @@
+<!doctype html><html lang="en"><head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WWZSHG48');</script>
+<!-- End Google Tag Manager -->
+
+
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Page not found · Praveen Bidaliya</title>
+<style>body{margin:0;min-height:100vh;display:grid;place-items:center;font-family:Inter,system-ui,sans-serif;color:#111316;background:linear-gradient(180deg,#E9EEF3,#C9D8E4)}div{text-align:center;padding:40px;border-radius:32px;background:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.85);backdrop-filter:blur(24px)}h1{font-size:44px;margin:0 0 10px;letter-spacing:-.03em}a{display:inline-block;margin-top:18px;background:#111316;color:#fff;text-decoration:none;padding:12px 20px;border-radius:999px}</style></head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WWZSHG48" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<div><h1>Page not found</h1><p>This page doesn't exist.</p><a href="/">Back to home</a></div><script id="pb-track">
+(function(){
+  var dl=window.dataLayer=window.dataLayer||[];
+  function push(o){try{dl.push(o)}catch(e){}}
+  var path=location.pathname.replace(/\.html$/,'');
+  var cs=(path.match(/work\/([\w-]+)/)||[])[1]||'';
+  var names={'bill-simplification':'Bill Simplification','incentive':'Incentive Platform','unified':'Unified Care Workspace','sd-wan':'Lavelle SD-WAN','dominos-checkout':"Domino's Checkout"};
+  push({event:'pb_page_view',page_type:cs?'case_study':(/404/.test(document.title)?'not_found':'home'),case_study:names[cs]||''});
+  function txt(el){return (el&&el.textContent||'').replace(/\s+/g,' ').trim().slice(0,80)}
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('a');
+    if(a){
+      var h=a.getAttribute('href')||'';
+      var m=h.match(/work\/([\w-]+)/);
+      if(m&&!cs){push({event:'case_study_click',case_study:names[m[1]]||m[1],click_location:a.closest('#work')?'work_section':'other'});return}
+      if(a.hasAttribute('download')||/\.pdf$/i.test(h)){push({event:'cv_download',click_location:a.closest('#contact')?'contact':(a.closest('header,.hero,.scene,section')||{}).id||'hero'});return}
+      if(/linkedin\.com/.test(h)){push({event:'outbound_click',link_type:'linkedin',page_case_study:names[cs]||'home'});return}
+      if(/^mailto:/.test(h)){push({event:'outbound_click',link_type:'email',page_case_study:names[cs]||'home'});return}
+      if(/^tel:/.test(h)){push({event:'outbound_click',link_type:'phone'});return}
+      if(h.charAt(0)==='#'){push({event:'nav_click',nav_target:h.slice(1)||'top',link_text:txt(a)});return}
+      if(/index\.html|^\.\.\/?$|^\/$/.test(h)){push({event:'nav_click',nav_target:'home',from_case_study:names[cs]||''});return}
+      if(/^https?:/.test(h)){push({event:'outbound_click',link_type:'other',link_url:h})}
+      return;
+    }
+    var row=e.target.closest&&e.target.closest('.exp .row');
+    if(row){setTimeout(function(){if(row.classList.contains('open'))push({event:'experience_open',company:txt(row.querySelector('.hd b'))})},0);return}
+    var img=e.target.closest&&e.target.closest('.bs img');
+    if(img){push({event:'image_zoom',case_study:names[cs]||'',image:(img.getAttribute('alt')||'').slice(0,80)})}
+  },true);
+  var marks=[25,50,75,90],hit={};
+  function sc(){var d=document.documentElement,h=d.scrollHeight-innerHeight;if(h<=0)return;var p=scrollY/h*100;
+    marks.forEach(function(m){if(p>=m&&!hit[m]){hit[m]=1;push({event:'scroll_depth',percent:m,case_study:names[cs]||'home'})}})}
+  addEventListener('scroll',sc,{passive:true});
+  if(cs){var t0=Date.now(),sent=0;function eng(){if(sent)return;sent=1;push({event:'case_study_time',case_study:names[cs],seconds:Math.round((Date.now()-t0)/1000)})}
+    addEventListener('pagehide',eng);document.addEventListener('visibilitychange',function(){if(document.visibilityState==='hidden')eng()})}
+  if('IntersectionObserver' in window){var seen={};var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){var id=en.target.id;if(!seen[id]){seen[id]=1;push({event:'section_view',section:id})}}})},{threshold:.4});
+    ['work','about','principles','experience','contact'].forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el)})}
+})();
+</script>
+</body></html>
