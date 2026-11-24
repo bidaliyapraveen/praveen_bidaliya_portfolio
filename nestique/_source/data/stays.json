@@ -23,13 +23,218 @@
     {
       "slug": "cozy-tapovan",
       "name": "Cozy Tapovan",
+      "city": "rishikesh",
+      "area": "Tapovan Vatika, Tapovan",
+      "unit": "C2",
+      "type": "Apartment",
+      "summary": "A warm, plant-filled flat in Tapovan with a curtained living nook, a reading corner and a lit-up balcony.",
+      "description": "Cozy Tapovan is set up for slow mornings: soft light, plenty of plants, a kitchen you can actually cook in and a living room made for doing nothing. There's a canopy reading nook, a bedroom with full-length windows and a balcony strung with fairy lights for the evenings. Tapovan's cafés and yoga schools are close by.",
+      "guests": null,
+      "bedrooms": null,
+      "beds": null,
+      "baths": null,
+      "price": null,
+      "amenities": [
+        "Wi-Fi",
+        "Air conditioning",
+        "Kitchen",
+        "Free parking",
+        "Dedicated workspace",
+        "Private balcony"
+      ],
+      "amenityGroups": [
+        [
+          "Scenic views",
+          [
+            "Mountain view"
+          ]
+        ],
+        [
+          "Bathroom",
+          [
+            "Bath",
+            "Hairdryer",
+            "Cleaning products",
+            "Shampoo",
+            "Body soap",
+            "Bidet",
+            "Hot water",
+            "Shower gel"
+          ]
+        ],
+        [
+          "Bedroom and laundry",
+          [
+            "Essentials: towels, bed sheets, soap and toilet paper",
+            "Hangers",
+            "Iron",
+            "Clothes storage"
+          ]
+        ],
+        [
+          "Entertainment",
+          [
+            "TV"
+          ]
+        ],
+        [
+          "Heating and cooling",
+          [
+            "Air conditioning"
+          ]
+        ],
+        [
+          "Home safety",
+          [
+            "Smoke alarm",
+            "Carbon monoxide alarm",
+            "Fire extinguisher",
+            "First aid kit"
+          ]
+        ],
+        [
+          "Internet and office",
+          [
+            "Wi-Fi",
+            "Dedicated workspace"
+          ]
+        ],
+        [
+          "Kitchen and dining",
+          [
+            "Kitchen where you can cook your own meals",
+            "Fridge"
+          ]
+        ],
+        [
+          "Outdoor",
+          [
+            "Patio or balcony",
+            "Outdoor dining area"
+          ]
+        ],
+        [
+          "Parking and facilities",
+          [
+            "Lift, at least 132 cm deep with an 81 cm doorway",
+            "Free parking on premises",
+            "Gated community"
+          ]
+        ],
+        [
+          "Services",
+          [
+            "Pets allowed (assistance animals always allowed)",
+            "Smoking allowed",
+            "Long-term stays of 28 days or more"
+          ]
+        ]
+      ],
+      "notIncluded": [
+        "Exterior security cameras on property",
+        "Washing machine",
+        "Tumble dryer",
+        "Heating"
+      ],
+      "mapQuery": "Tapovan, Rishikesh",
+      "images": [
+        "photos/cozy-tapovan/bedroom.jpg",
+        "photos/cozy-tapovan/living-nook.jpg",
+        "photos/cozy-tapovan/balcony-night.jpg",
+        "photos/cozy-tapovan/kitchen.jpg",
+        "photos/cozy-tapovan/bathroom.jpg",
+        "photos/cozy-tapovan/reading-nook.jpg",
+        "photos/cozy-tapovan/bedroom-2.jpg",
+        "photos/cozy-tapovan/bedroom-wide.jpg",
+        "photos/cozy-tapovan/bedroom-night.jpg",
+        "photos/cozy-tapovan/bedroom-towels.jpg",
+        "photos/cozy-tapovan/hallway.jpg",
+        "photos/cozy-tapovan/living-room.jpg",
+        "photos/cozy-tapovan/living-room-3.jpg",
+        "photos/cozy-tapovan/living-room-2.jpg",
+        "photos/cozy-tapovan/living-sofa.jpg",
+        "photos/cozy-tapovan/living-plant.jpg",
+        "photos/cozy-tapovan/tv-wall.jpg",
+        "photos/cozy-tapovan/art-wall.jpg",
+        "photos/cozy-tapovan/nook-cushions.jpg",
+        "photos/cozy-tapovan/kitchen-2.jpg",
+        "photos/cozy-tapovan/crockery.jpg",
+        "photos/cozy-tapovan/building-night.jpg",
+        "photos/cozy-tapovan/ganga-temple.jpg",
+        "photos/cozy-tapovan/society-gate.jpg"
+      ],
+      "imageAlts": [
+        "Bedroom with string lights over the headboard and tall windows",
+        "Curtained living nook with sofa, floor lamp and pouf",
+        "Balcony at night with a sofa, jute rug and fairy lights",
+        "Kitchen with wood cabinets, induction cooktop, kettle and chimney",
+        "Bathroom with marble tiles, backlit mirror and water heater",
+        "Canopy reading nook with cushions and fairy lights",
+        "Bedroom with wardrobe, sofa and TV, looking through to the living nook",
+        "Bedroom with TV unit, sofa, air conditioning and full-length windows",
+        "Bedroom at night with cove lighting and wardrobe",
+        "Bed made up with fresh towels, sofa and TV",
+        "Hallway to the bedroom and bathroom",
+        "Living room with sofa, gallery wall and wall clock",
+        "L-shaped sofa with yellow cushions, gallery wall and mirror",
+        "Living room with sofa, ottoman and art",
+        "Sofa with cushions and coffee table behind sheer curtains",
+        "Living nook with lamp and palm",
+        "TV wall with shelves above the sofa",
+        "Gallery wall with framed prints and a wall clock",
+        "Cushions in the reading nook",
+        "Kitchen counter and cabinets",
+        "Crockery: bowls, glasses and mugs",
+        "The building at night",
+        "The Ganga in Rishikesh at sunset",
+        "Entrance gate of Deecon Valley society"
+      ],
+      "imageCats": [
+        "Bedroom",
+        "Living room",
+        "Balcony",
+        "Kitchen",
+        "Bathroom",
+        "Reading nook",
+        "Bedroom",
+        "Bedroom",
+        "Bedroom",
+        "Bedroom",
+        "Bedroom",
+        "Living room",
+        "Living room",
+        "Living room",
+        "Living room",
+        "Living room",
+        "Living room",
+        "Living room",
+        "Reading nook",
+        "Kitchen",
+        "Kitchen",
+        "Building and area",
+        "Building and area",
+        "Building and area"
+      ],
+      "photoCategories": [
+        "Bedroom",
+        "Living room",
+        "Reading nook",
+        "Kitchen",
+        "Bathroom",
+        "Balcony",
+        "Building and area"
+      ]
+    },
+    {
+      "slug": "tapovan-tranquil",
+      "name": "Tapovan Tranquil",
       "tagline": "Kitchen, free parking, AC and Wi-Fi",
       "city": "rishikesh",
       "area": "Deecon Valley, Tapovan",
-      "unit": "C2",
+      "unit": "C3",
       "type": "Apartment",
       "summary": "A cozy, serene flat in the hills of Tapovan, close to the area's popular spots.",
-      "description": "Your family will be close to everything when you stay at this centrally located place. Welcome to Cozy Tapovan by Nestique, a cozy and serene hideaway in the hills of Tapovan, near Deecon Valley Society. Designed for travellers who want comfort, calm and a touch of nature, this charming flat balances peaceful surroundings with easy access to Tapovan's popular spots.",
+      "description": "Your family will be close to everything when you stay at this centrally located place. Welcome to Tapovan Tranquil by Nestique, a cozy and serene hideaway in the hills of Tapovan, near Deecon Valley Society. Designed for travellers who want comfort, calm and a touch of nature, this charming flat balances peaceful surroundings with easy access to Tapovan's popular spots.",
       "guests": null,
       "bedrooms": null,
       "beds": null,
@@ -153,21 +358,21 @@
       ],
       "mapQuery": "Deecon Valley, Tapovan, Rishikesh",
       "images": [
-        "photos/cozy-tapovan/bedroom.jpg",
-        "photos/cozy-tapovan/living-room.jpg",
-        "photos/cozy-tapovan/balcony-night.jpg",
-        "photos/cozy-tapovan/kitchen.jpg",
-        "photos/cozy-tapovan/bathroom.jpg",
-        "photos/cozy-tapovan/living-candles.jpg",
-        "photos/cozy-tapovan/sofa-corner.jpg",
-        "photos/cozy-tapovan/tv-wall.jpg",
-        "photos/cozy-tapovan/tv-wall-2.jpg",
-        "photos/cozy-tapovan/art-wall.jpg",
-        "photos/cozy-tapovan/bathroom-vanity.jpg",
-        "photos/cozy-tapovan/bathroom-basin.jpg",
-        "photos/cozy-tapovan/building-night.jpg",
-        "photos/cozy-tapovan/society-gate.jpg",
-        "photos/cozy-tapovan/ganga-sunset.jpg"
+        "photos/tapovan-tranquil/bedroom.jpg",
+        "photos/tapovan-tranquil/living-room.jpg",
+        "photos/tapovan-tranquil/balcony-night.jpg",
+        "photos/tapovan-tranquil/kitchen.jpg",
+        "photos/tapovan-tranquil/bathroom.jpg",
+        "photos/tapovan-tranquil/living-candles.jpg",
+        "photos/tapovan-tranquil/sofa-corner.jpg",
+        "photos/tapovan-tranquil/tv-wall.jpg",
+        "photos/tapovan-tranquil/tv-wall-2.jpg",
+        "photos/tapovan-tranquil/art-wall.jpg",
+        "photos/tapovan-tranquil/bathroom-vanity.jpg",
+        "photos/tapovan-tranquil/bathroom-basin.jpg",
+        "photos/tapovan-tranquil/building-night.jpg",
+        "photos/tapovan-tranquil/society-gate.jpg",
+        "photos/tapovan-tranquil/ganga-sunset.jpg"
       ],
       "imageAlts": [
         "Bedroom with a double bed, wall art and a door to the balcony",
@@ -210,32 +415,7 @@
         "Bathroom",
         "Balcony",
         "Building and area"
-      ]
-    },
-    {
-      "slug": "tapovan-tranquil",
-      "name": "Tapovan Tranquil",
-      "city": "rishikesh",
-      "area": "Tapovan Vatika, Tapovan",
-      "unit": "C3",
-      "type": "Apartment",
-      "summary": "A calm, light-filled flat in Tapovan, made for slow, quiet stays.",
-      "description": "Tapovan Tranquil is the quieter of our Tapovan homes, with clean lines, white linen and room to read or stretch. Book it alongside Cozy Tapovan when you're travelling with a bigger group.",
-      "guests": null,
-      "bedrooms": null,
-      "beds": null,
-      "baths": null,
-      "price": null,
-      "amenities": [
-        "Wi-Fi",
-        "Full kitchen",
-        "Induction cooktop",
-        "Pressure cooker and cookware",
-        "Fresh linen and towels",
-        "Self check-in with key box"
       ],
-      "mapQuery": "Tapovan, Rishikesh",
-      "images": [],
       "oldSlugs": [
         "tranquil"
       ]
