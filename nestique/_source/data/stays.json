@@ -896,16 +896,59 @@
       ],
       "mapQuery": "IT Park, Dehradun",
       "images": [
-        "photos/the-doon-square-suites/living-corner.jpg"
+        "photos/the-doon-square-suites/bedroom.jpg",
+        "photos/the-doon-square-suites/living-room.jpg",
+        "photos/the-doon-square-suites/workspace.jpg",
+        "photos/the-doon-square-suites/kitchen.jpg",
+        "photos/the-doon-square-suites/bathroom.jpg",
+        "photos/the-doon-square-suites/bedroom-tv.jpg",
+        "photos/the-doon-square-suites/tea-station.jpg",
+        "photos/the-doon-square-suites/canopy-nook.jpg",
+        "photos/the-doon-square-suites/living-corner.jpg",
+        "photos/the-doon-square-suites/building-night.jpg",
+        "photos/the-doon-square-suites/lobby.jpg",
+        "photos/the-doon-square-suites/lift-lobby.jpg",
+        "photos/the-doon-square-suites/restaurant.jpg",
+        "photos/the-doon-square-suites/corridor.jpg"
       ],
       "imageAlts": [
-        "Living corner with green sofa, floor lamp, wood-slat wall and folk-art prints"
+        "Bedroom with king bed, desk, cove lighting and floor-length curtains",
+        "Living area with green sofas, canopy nook and folk-art prints",
+        "Desk with office chair, TV and tea station",
+        "Wood kitchen with induction cooktop, sink and chimney",
+        "Bathroom with backlit mirror, vessel basin, hairdryer and water heater",
+        "Bed, desk and TV wall with air conditioning",
+        "Tea station with kettle, mugs and wall art",
+        "Canopy reading nook with fairy lights and folk-art prints",
+        "Green sofa, floor lamp and wood-slat wall",
+        "The Doon Square building lit up at night",
+        "Double-height lobby with reception and lounge seating",
+        "Lift lobby",
+        "Restaurant in the building",
+        "Corridor to the apartment"
       ],
       "imageCats": [
-        "Living area"
+        "Bedroom and workspace",
+        "Living area",
+        "Bedroom and workspace",
+        "Kitchen",
+        "Bathroom",
+        "Bedroom and workspace",
+        "Bedroom and workspace",
+        "Living area",
+        "Living area",
+        "Building and amenities",
+        "Building and amenities",
+        "Building and amenities",
+        "Building and amenities",
+        "Building and amenities"
       ],
       "photoCategories": [
-        "Living area"
+        "Bedroom and workspace",
+        "Living area",
+        "Kitchen",
+        "Bathroom",
+        "Building and amenities"
       ]
     },
     {
