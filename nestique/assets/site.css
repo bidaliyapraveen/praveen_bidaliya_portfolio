@@ -557,3 +557,11 @@ h1, h2, h3 { font-variation-settings: "opsz" 96, "wdth" 100; letter-spacing: -0.
 .city-tabs button:hover:not([aria-selected="true"]) { background: #eef1ec; }
 .city-tabs button[aria-selected="true"] { background: var(--river); border-color: var(--river); color: #fff; }
 .city-tabs button[aria-selected="true"] span { background: rgba(255, 255, 255, .18); color: #fff; }
+
+/* v8: description list + sleeping arrangements */
+.desc-h { font-size: 17px; font-weight: 650; margin: 22px 0 8px; }
+.desc-list { margin: 0; padding-left: 20px; display: grid; gap: 6px; color: var(--river); }
+.sleep { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+.sleep li { display: grid; gap: 4px; padding: 18px 20px; border: 1px solid var(--line); border-radius: 14px; background: var(--card); }
+.sleep strong { font-size: 17px; }
+.sleep span { color: var(--stone); font-size: 15px; }

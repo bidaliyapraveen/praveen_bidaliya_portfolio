@@ -421,24 +421,187 @@
       ]
     },
     {
-      "slug": "serenity",
-      "name": "Serenity",
+      "slug": "the-spacious",
+      "oldSlugs": [
+        "serenity"
+      ],
+      "name": "The Spacious",
+      "tagline": "2 bedrooms, mountain views and free parking",
       "city": "rishikesh",
       "area": "85 Ganges",
       "unit": "C5",
-      "type": "Apartment",
-      "summary": "A quiet home at 85 Ganges, made for long, unhurried stays.",
-      "description": "Serenity is at 85 Ganges in Rishikesh. It has a full kitchen, comfortable beds and the quiet the name promises.",
+      "type": "2-bedroom apartment",
+      "summary": "A 2BHK with mountain views from the balcony, close to local cafés, shops and the Ganga.",
+      "description": "Our 2BHK apartment offers beautiful mountain views right from the balcony, creating the perfect setting for a relaxing getaway.",
+      "descriptionTitle": "What makes it a good place to stay",
+      "descriptionList": [
+        "Two comfortable bedrooms with cozy beds",
+        "A spacious living area to relax and unwind",
+        "High-speed Wi-Fi, good for work or streaming",
+        "Air-conditioned rooms for warm days",
+        "Close to local cafés, shops and the Ganga",
+        "A safe, quiet and serene neighbourhood",
+        "Two Ganga ghats nearby"
+      ],
+      "sleep": [
+        [
+          "Bedroom 1",
+          "1 king bed"
+        ],
+        [
+          "Bedroom 2",
+          "1 king bed"
+        ]
+      ],
       "guests": null,
-      "bedrooms": null,
-      "beds": null,
+      "bedrooms": 2,
+      "beds": 2,
       "baths": null,
       "price": null,
+      "rating": {
+        "score": 4.69,
+        "count": 32,
+        "categories": [
+          [
+            "Cleanliness",
+            4.6
+          ],
+          [
+            "Accuracy",
+            4.7
+          ],
+          [
+            "Check-in",
+            4.8
+          ],
+          [
+            "Communication",
+            4.8
+          ],
+          [
+            "Location",
+            4.5
+          ],
+          [
+            "Value",
+            4.4
+          ]
+        ]
+      },
+      "highlights": [
+        [
+          "Balcony with mountain views",
+          "Mountain views from the balcony, a kitchen for cooking and a patio to unwind."
+        ],
+        [
+          "Comfortable and easy to settle in",
+          "Guests highlight the spacious, comfortable layout and easy self check-in with a lockbox."
+        ]
+      ],
       "amenities": [
         "Wi-Fi",
-        "Full kitchen",
-        "Fresh linen and towels",
-        "Self check-in with key box"
+        "Air conditioning",
+        "Kitchen",
+        "Free parking",
+        "Dedicated workspace",
+        "Self check-in"
+      ],
+      "amenityGroups": [
+        [
+          "Bathroom",
+          [
+            "Cleaning products",
+            "Body soap",
+            "Bidet",
+            "Hot water"
+          ]
+        ],
+        [
+          "Bedroom and laundry",
+          [
+            "Essentials: towels, bed sheets, soap and toilet paper",
+            "Hangers",
+            "Bed linen",
+            "Extra pillows and blankets",
+            "Room-darkening blinds",
+            "Safe",
+            "Clothes storage"
+          ]
+        ],
+        [
+          "Entertainment",
+          [
+            "Ethernet connection",
+            "TV",
+            "Books and reading material",
+            "Cinema"
+          ]
+        ],
+        [
+          "Heating and cooling",
+          [
+            "Air conditioning",
+            "Ceiling fan"
+          ]
+        ],
+        [
+          "Home safety",
+          [
+            "Exterior security cameras in common areas such as the main entrance and outside the building, for security only",
+            "Smoke alarm",
+            "Carbon monoxide alarm",
+            "Fire extinguisher",
+            "First aid kit"
+          ]
+        ],
+        [
+          "Internet and office",
+          [
+            "Wi-Fi",
+            "Dedicated workspace"
+          ]
+        ],
+        [
+          "Kitchen and dining",
+          [
+            "Kitchen where you can cook your own meals",
+            "Fridge",
+            "Cooking basics: pots and pans, oil, salt and pepper",
+            "Crockery and cutlery",
+            "Mini fridge",
+            "Freezer",
+            "Dishwasher",
+            "Cooker",
+            "Kettle",
+            "Wine glasses",
+            "Blender",
+            "Rice cooker",
+            "Barbecue utensils"
+          ]
+        ],
+        [
+          "Location features",
+          [
+            "Lake access"
+          ]
+        ],
+        [
+          "Parking and facilities",
+          [
+            "Free parking on premises"
+          ]
+        ],
+        [
+          "Services",
+          [
+            "Pets allowed (assistance animals always allowed)",
+            "Self check-in",
+            "Lockbox"
+          ]
+        ]
+      ],
+      "notIncluded": [
+        "Washing machine"
       ],
       "mapQuery": "85 Ganges, Rishikesh",
       "images": []

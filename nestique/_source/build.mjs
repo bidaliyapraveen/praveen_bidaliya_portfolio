@@ -262,6 +262,8 @@ data.stays.forEach((s) => {
       ${s.highlights ? `<ul class="highlights">${s.highlights.map(([t, d]) => `<li><strong>${esc(t)}</strong><span>${esc(d)}</span></li>`).join('')}</ul>` : ''}
       <h2>About this home</h2>
       <p>${esc(s.description)}</p>
+      ${s.descriptionList ? `<h3 class="desc-h">${esc(s.descriptionTitle || 'Highlights')}</h3><ul class="desc-list">${s.descriptionList.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}
+      ${s.sleep ? `<h2>Where you'll sleep</h2><ul class="sleep">${s.sleep.map(([r, bd]) => `<li><strong>${esc(r)}</strong><span>${esc(bd)}</span></li>`).join('')}</ul>` : ''}
       <h2>What's included</h2>
       ${s.amenityGroups ? `
       <ul class="amen">${s.amenities.map((a) => `<li>${esc(a)}</li>`).join('')}</ul>
