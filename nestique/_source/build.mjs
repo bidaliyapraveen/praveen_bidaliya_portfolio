@@ -43,7 +43,7 @@ const photo = (stay, i, cls = '') => {
 const faqs = [
   ['How do I book?', 'Send us a booking request from the stay\'s page, or email us with your dates and number of guests. We reply with the total price and availability, and confirm once payment is done.'],
   ['When do I pay?', 'After we confirm your dates. We share the total for your stay and the payment details by email.'],
-  ['How does check-in work?', 'All our homes have self check-in. Before you arrive we send the exact address, directions and how to get the keys.'],
+  ['How does check-in work?', 'Before you arrive we send the exact address, directions and how to get the keys.'],
   ['Can I book more than one home?', 'Yes. Cozy Tapovan and Tranquil are in the same building, and so are the two Doon Square flats, which works well for families and groups. Mention it in your request.'],
   ['Are long stays possible?', 'Yes. Tell us your dates and we\'ll share a price for weekly or monthly stays.'],
   ['Can I cook?', 'Every home has a kitchen with cookware, so you can cook your own meals.'],
@@ -54,10 +54,13 @@ const nav = (page) => `
   <a class="mark" href="/" aria-label="Nestique home">Nestique</a>
   <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
   <nav id="site-nav" aria-label="Main">
-    <a href="/#stays"${page === 'home' ? '' : ''}>Stays</a>
-    <a href="/#booking">How to book</a>
-    <a href="/#faq">FAQ</a>
-    <a class="btn-sm" href="/contact/"${page === 'contact' ? ' aria-current="page"' : ''}>Contact us</a>
+    <div class="nav-links">
+      <a href="/#stays">Stays</a>
+      <a href="/#booking">How to book</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/contact/"${page === 'contact' ? ' aria-current="page"' : ''}>Contact</a>
+    </div>
+    <a class="btn-sm" href="/contact/">Request to book</a>
   </nav>
 </header>`;
 
@@ -118,20 +121,37 @@ const honeypot = `<p class="hp" aria-hidden="true"><label>Leave this empty <inpu
         <input type="hidden" name="_next" value="${SITE}/thank-you/">`;
 
 // ---------- Home ----------
-const cityBlocks = data.cities.map((c) => {
-  const stays = data.stays.filter((s) => s.city === c.id);
-  if (!stays.length) return '';
-  return `
-  <section class="city" data-city="${c.id}" aria-labelledby="city-${c.id}">
-    <div class="city-head">
-      <h3 id="city-${c.id}">${esc(c.name)}</h3>
-      <p>${esc(c.line)}</p>
-      <span class="count">${stays.length} ${stays.length === 1 ? 'home' : 'homes'}</span>
-    </div>
-    <ul class="index">${stays.map((s) => row(s, s.area, s.type)).join('')}
-    </ul>
-  </section>`;
-}).join('');
+const icon = {
+  pin: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>',
+  home: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V21H3z"/><path d="M9 21v-6h6v6"/></svg>',
+  bed: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18V7M3 13h18v5M21 18v-3a3 3 0 0 0-3-3H10v1"/><circle cx="6.5" cy="10.5" r="1.5"/></svg>',
+  users: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M18 13.5a6.5 6.5 0 0 1 3.5 6.5"/></svg>',
+  pot: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10h16v6a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4zM2 10h2M20 10h2M9 6c0-1 1-1 1-2M14 6c0-1 1-1 1-2"/></svg>',
+  search: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>',
+};
+
+const card = (s) => `
+    <li class="card" data-city="${s.city}" data-search="${esc([s.name, s.area, cityName(s.city), s.type].join(' ').toLowerCase())}">
+      <a href="/stays/${s.slug}/">
+        <div class="card-img">
+          ${photo(s, 0)}
+          <span class="card-tag">${esc(cityName(s.city))}</span>
+        </div>
+        <div class="card-body">
+          <div class="card-top">
+            <h3>${esc(s.name)}</h3>
+            <p class="card-price">${s.price ? `₹${Number(s.price).toLocaleString('en-IN')}<span>/night</span>` : '<span>Price on request</span>'}</p>
+          </div>
+          <p class="card-loc">${icon.pin}${esc(s.area)}${s.area === cityName(s.city) ? '' : `, ${esc(cityName(s.city))}`}</p>
+          <ul class="card-facts">
+            <li>${icon.home}${esc(s.type)}</li>
+            ${s.bedrooms && !/bedroom/i.test(s.type) ? `<li>${icon.bed}${s.bedrooms} ${s.bedrooms === 1 ? 'bedroom' : 'bedrooms'}</li>` : ''}
+            ${s.guests ? `<li>${icon.users}Up to ${s.guests} guests</li>` : ''}
+            ${s.amenities.includes('Full kitchen') ? `<li>${icon.pot}Full kitchen</li>` : ''}
+          </ul>
+        </div>
+      </a>
+    </li>`;
 
 const faqHtml = `
 <section id="faq" class="faq" aria-labelledby="faq-title">
@@ -146,28 +166,27 @@ write('index.html', layout({
   description: `${data.stays.length} homes to stay in ${cityList}. Book directly with Nestique.`,
   page: 'home',
   image: data.stays.find((s) => s.images[0])?.images[0],
-  jsonld: {
-    '@context': 'https://schema.org', '@type': 'Organization', name: 'Nestique', url: SITE, email: data.email,
-  },
+  jsonld: { '@context': 'https://schema.org', '@type': 'Organization', name: 'Nestique', url: SITE, email: data.email },
   body: `
-<section class="hero">
-  <h1>Homes to stay in Rishikesh, Dehradun and&nbsp;Gurgaon.</h1>
-  <div class="hero-foot">
-    <p>${data.stays.length} homes, each set up for slow mornings and longer stays. Pick one and send us your dates to book directly.</p>
-    <a class="btn" href="#stays">See the stays</a>
+<section class="hero hero-center">
+  <p class="pill">${data.stays.length} homes in ${cityList}</p>
+  <h1>Stay like you live here.<br><span>Homes by the Ganga and the hills.</span></h1>
+  <p class="hero-sub">Calm, fully equipped homes in Rishikesh, Dehradun and Gurgaon. Pick a stay, send your dates and book directly with us.</p>
+  <form class="search" role="search" onsubmit="return false">
+    <label class="sr" for="q">Search stays</label>
+    <input id="q" type="search" placeholder="Search by stay, area or city" autocomplete="off">
+    <span class="search-icon">${icon.search}</span>
+  </form>
+  <div class="filter" role="group" aria-label="Show stays in">
+    <button type="button" data-filter="all" aria-pressed="true">All</button>
+    ${data.cities.map((c) => `<button type="button" data-filter="${c.id}" aria-pressed="false">${esc(c.name)}</button>`).join('')}
   </div>
-  <figure class="hero-img">${photo(data.stays[0], 0)}</figure>
 </section>
 
-<section id="stays" class="stays" aria-labelledby="stays-title">
-  <div class="stays-head">
-    <h2 id="stays-title">The stays</h2>
-    <div class="filter" role="group" aria-label="Show stays in">
-      <button type="button" data-filter="all" aria-pressed="true">All cities</button>
-      ${data.cities.map((c) => `<button type="button" data-filter="${c.id}" aria-pressed="false">${esc(c.name)}</button>`).join('')}
-    </div>
-  </div>
-  ${cityBlocks}
+<section id="stays" class="stays" aria-label="Stays">
+  <ul class="cards">${data.stays.map(card).join('')}
+  </ul>
+  <p class="empty" hidden>No stays match that search. <button type="button" class="link-btn" data-clear>Show all stays</button></p>
 </section>
 
 <section id="booking" class="booking" aria-labelledby="booking-title">
@@ -266,7 +285,7 @@ data.stays.forEach((s) => {
 
   <section class="more" aria-labelledby="more-title">
     <h2 id="more-title">Other stays</h2>
-    <ul class="index">${others.map((o) => row(o, o.area === cityName(o.city) ? o.type : o.area, cityName(o.city))).join('')}
+    <ul class="cards">${others.map(card).join('')}
     </ul>
   </section>
 </article>

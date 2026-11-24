@@ -28,10 +28,13 @@
   <a class="mark" href="/nestique/" aria-label="Nestique home">Nestique</a>
   <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
   <nav id="site-nav" aria-label="Main">
-    <a href="/nestique/#stays">Stays</a>
-    <a href="/nestique/#booking">How to book</a>
-    <a href="/nestique/#faq">FAQ</a>
-    <a class="btn-sm" href="/nestique/contact/">Contact us</a>
+    <div class="nav-links">
+      <a href="/nestique/#stays">Stays</a>
+      <a href="/nestique/#booking">How to book</a>
+      <a href="/nestique/#faq">FAQ</a>
+      <a href="/nestique/contact/">Contact</a>
+    </div>
+    <a class="btn-sm" href="/nestique/contact/">Request to book</a>
   </nav>
 </header>
 <main id="main">
@@ -114,28 +117,70 @@
 
   <section class="more" aria-labelledby="more-title">
     <h2 id="more-title">Other stays</h2>
-    <ul class="index">
-      <li>
-        <a class="row" href="/nestique/stays/doon-square-531/">
-          <span class="row-name">Doon Square 531</span>
-          <span class="row-meta"><span>Doon Square</span><span>Dehradun</span></span>
-          <span class="row-thumb" aria-hidden="true"><div class="ph " role="img" aria-label="Photo of Doon Square 531 coming soon"><span>D</span></div></span>
-        </a>
-      </li>
-      <li>
-        <a class="row" href="/nestique/stays/cozy-tapovan/">
-          <span class="row-name">Cozy Tapovan</span>
-          <span class="row-meta"><span>Tapovan Vatika, Tapovan</span><span>Rishikesh</span></span>
-          <span class="row-thumb" aria-hidden="true"><div class="ph " role="img" aria-label="Photo of Cozy Tapovan coming soon"><span>C</span></div></span>
-        </a>
-      </li>
-      <li>
-        <a class="row" href="/nestique/stays/tranquil/">
-          <span class="row-name">Tranquil</span>
-          <span class="row-meta"><span>Tapovan Vatika, Tapovan</span><span>Rishikesh</span></span>
-          <span class="row-thumb" aria-hidden="true"><div class="ph " role="img" aria-label="Photo of Tranquil coming soon"><span>T</span></div></span>
-        </a>
-      </li>
+    <ul class="cards">
+    <li class="card" data-city="dehradun" data-search="doon square 531 doon square dehradun apartment">
+      <a href="/nestique/stays/doon-square-531/">
+        <div class="card-img">
+          <div class="ph " role="img" aria-label="Photo of Doon Square 531 coming soon"><span>D</span></div>
+          <span class="card-tag">Dehradun</span>
+        </div>
+        <div class="card-body">
+          <div class="card-top">
+            <h3>Doon Square 531</h3>
+            <p class="card-price"><span>Price on request</span></p>
+          </div>
+          <p class="card-loc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Doon Square, Dehradun</p>
+          <ul class="card-facts">
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V21H3z"/><path d="M9 21v-6h6v6"/></svg>Apartment</li>
+            
+            
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10h16v6a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4zM2 10h2M20 10h2M9 6c0-1 1-1 1-2M14 6c0-1 1-1 1-2"/></svg>Full kitchen</li>
+          </ul>
+        </div>
+      </a>
+    </li>
+    <li class="card" data-city="rishikesh" data-search="cozy tapovan tapovan vatika, tapovan rishikesh apartment">
+      <a href="/nestique/stays/cozy-tapovan/">
+        <div class="card-img">
+          <div class="ph " role="img" aria-label="Photo of Cozy Tapovan coming soon"><span>C</span></div>
+          <span class="card-tag">Rishikesh</span>
+        </div>
+        <div class="card-body">
+          <div class="card-top">
+            <h3>Cozy Tapovan</h3>
+            <p class="card-price"><span>Price on request</span></p>
+          </div>
+          <p class="card-loc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Tapovan Vatika, Tapovan, Rishikesh</p>
+          <ul class="card-facts">
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V21H3z"/><path d="M9 21v-6h6v6"/></svg>Apartment</li>
+            
+            
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10h16v6a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4zM2 10h2M20 10h2M9 6c0-1 1-1 1-2M14 6c0-1 1-1 1-2"/></svg>Full kitchen</li>
+          </ul>
+        </div>
+      </a>
+    </li>
+    <li class="card" data-city="rishikesh" data-search="tranquil tapovan vatika, tapovan rishikesh apartment">
+      <a href="/nestique/stays/tranquil/">
+        <div class="card-img">
+          <div class="ph " role="img" aria-label="Photo of Tranquil coming soon"><span>T</span></div>
+          <span class="card-tag">Rishikesh</span>
+        </div>
+        <div class="card-body">
+          <div class="card-top">
+            <h3>Tranquil</h3>
+            <p class="card-price"><span>Price on request</span></p>
+          </div>
+          <p class="card-loc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Tapovan Vatika, Tapovan, Rishikesh</p>
+          <ul class="card-facts">
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V21H3z"/><path d="M9 21v-6h6v6"/></svg>Apartment</li>
+            
+            
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10h16v6a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4zM2 10h2M20 10h2M9 6c0-1 1-1 1-2M14 6c0-1 1-1 1-2"/></svg>Full kitchen</li>
+          </ul>
+        </div>
+      </a>
+    </li>
     </ul>
   </section>
 </article>

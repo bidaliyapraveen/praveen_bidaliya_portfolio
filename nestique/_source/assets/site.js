@@ -18,18 +18,30 @@
     }));
   }
 
-  // City filter on home
+  // City filter + search on home
   const filterBtns = $$('.filter [data-filter]');
-  const applyFilter = (id) => {
-    filterBtns.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.filter === id)));
-    $$('.city[data-city]').forEach((sec) => { sec.hidden = id !== 'all' && sec.dataset.city !== id; });
+  const q = $('#q');
+  const cards = $$('.stays .card');
+  const empty = $('.stays .empty');
+  let city = 'all';
+  const apply = () => {
+    const term = (q?.value || '').trim().toLowerCase();
+    let shown = 0;
+    cards.forEach((c) => {
+      const ok = (city === 'all' || c.dataset.city === city) && (!term || c.dataset.search.includes(term));
+      c.hidden = !ok; if (ok) shown++;
+    });
+    if (empty) empty.hidden = shown > 0;
+    filterBtns.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.filter === city)));
   };
   filterBtns.forEach((b) => b.addEventListener('click', () => {
-    applyFilter(b.dataset.filter);
-    history.replaceState(null, '', b.dataset.filter === 'all' ? '#stays' : `#stays-${b.dataset.filter}`);
+    city = b.dataset.filter; apply();
+    history.replaceState(null, '', city === 'all' ? location.pathname : `#stays-${city}`);
   }));
+  q?.addEventListener('input', apply);
+  $('[data-clear]')?.addEventListener('click', () => { city = 'all'; if (q) q.value = ''; apply(); });
   const m = location.hash.match(/^#stays-(\w+)/);
-  if (m && filterBtns.some((b) => b.dataset.filter === m[1])) applyFilter(m[1]);
+  if (m && filterBtns.some((b) => b.dataset.filter === m[1])) { city = m[1]; apply(); }
 
   // Date fields: no past dates, check-out after check-in, nights count
   const iso = (d) => new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 10);

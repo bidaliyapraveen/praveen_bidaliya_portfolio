@@ -28,108 +28,183 @@
   <a class="mark" href="/nestique/" aria-label="Nestique home">Nestique</a>
   <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
   <nav id="site-nav" aria-label="Main">
-    <a href="/nestique/#stays">Stays</a>
-    <a href="/nestique/#booking">How to book</a>
-    <a href="/nestique/#faq">FAQ</a>
-    <a class="btn-sm" href="/nestique/contact/">Contact us</a>
+    <div class="nav-links">
+      <a href="/nestique/#stays">Stays</a>
+      <a href="/nestique/#booking">How to book</a>
+      <a href="/nestique/#faq">FAQ</a>
+      <a href="/nestique/contact/">Contact</a>
+    </div>
+    <a class="btn-sm" href="/nestique/contact/">Request to book</a>
   </nav>
 </header>
 <main id="main">
 
-<section class="hero">
-  <h1>Homes to stay in Rishikesh, Dehradun and&nbsp;Gurgaon.</h1>
-  <div class="hero-foot">
-    <p>7 homes, each set up for slow mornings and longer stays. Pick one and send us your dates to book directly.</p>
-    <a class="btn" href="#stays">See the stays</a>
+<section class="hero hero-center">
+  <p class="pill">7 homes in Rishikesh, Dehradun and Gurgaon</p>
+  <h1>Stay like you live here.<br><span>Homes by the Ganga and the hills.</span></h1>
+  <p class="hero-sub">Calm, fully equipped homes in Rishikesh, Dehradun and Gurgaon. Pick a stay, send your dates and book directly with us.</p>
+  <form class="search" role="search" onsubmit="return false">
+    <label class="sr" for="q">Search stays</label>
+    <input id="q" type="search" placeholder="Search by stay, area or city" autocomplete="off">
+    <span class="search-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>
+  </form>
+  <div class="filter" role="group" aria-label="Show stays in">
+    <button type="button" data-filter="all" aria-pressed="true">All</button>
+    <button type="button" data-filter="rishikesh" aria-pressed="false">Rishikesh</button><button type="button" data-filter="dehradun" aria-pressed="false">Dehradun</button><button type="button" data-filter="gurgaon" aria-pressed="false">Gurgaon</button>
   </div>
-  <figure class="hero-img"><div class="ph " role="img" aria-label="Photo of Cozy Tapovan coming soon"><span>C</span></div></figure>
 </section>
 
-<section id="stays" class="stays" aria-labelledby="stays-title">
-  <div class="stays-head">
-    <h2 id="stays-title">The stays</h2>
-    <div class="filter" role="group" aria-label="Show stays in">
-      <button type="button" data-filter="all" aria-pressed="true">All cities</button>
-      <button type="button" data-filter="rishikesh" aria-pressed="false">Rishikesh</button><button type="button" data-filter="dehradun" aria-pressed="false">Dehradun</button><button type="button" data-filter="gurgaon" aria-pressed="false">Gurgaon</button>
-    </div>
-  </div>
-  
-  <section class="city" data-city="rishikesh" aria-labelledby="city-rishikesh">
-    <div class="city-head">
-      <h3 id="city-rishikesh">Rishikesh</h3>
-      <p>Homes a short walk from the Ganga, in Tapovan and along the river road.</p>
-      <span class="count">4 homes</span>
-    </div>
-    <ul class="index">
-      <li>
-        <a class="row" href="/nestique/stays/cozy-tapovan/">
-          <span class="row-name">Cozy Tapovan</span>
-          <span class="row-meta"><span>Tapovan Vatika, Tapovan</span><span>Apartment</span></span>
-          <span class="row-thumb" aria-hidden="true"><div class="ph " role="img" aria-label="Photo of Cozy Tapovan coming soon"><span>C</span></div></span>
-        </a>
-      </li>
-      <li>
-        <a class="row" href="/nestique/stays/tranquil/">
-          <span class="row-name">Tranquil</span>
-          <span class="row-meta"><span>Tapovan Vatika, Tapovan</span><span>Apartment</span></span>
-          <span class="row-thumb" aria-hidden="true"><div class="ph " role="img" aria-label="Photo of Tranquil coming soon"><span>T</span></div></span>
-        </a>
-      </li>
-      <li>
-        <a class="row" href="/nestique/stays/serenity/">
-          <span class="row-name">Serenity</span>
-          <span class="row-meta"><span>85 Ganges</span><span>Apartment</span></span>
-          <span class="row-thumb" aria-hidden="true"><div class="ph " role="img" aria-label="Photo of Serenity coming soon"><span>S</span></div></span>
-        </a>
-      </li>
-      <li>
-        <a class="row" href="/nestique/stays/rishikesh-3bhk/">
-          <span class="row-name">The Rishikesh House</span>
-          <span class="row-meta"><span>Rishikesh</span><span>3-bedroom home</span></span>
-          <span class="row-thumb" aria-hidden="true"><div class="ph " role="img" aria-label="Photo of The Rishikesh House coming soon"><span>T</span></div></span>
-        </a>
-      </li>
-    </ul>
-  </section>
-  <section class="city" data-city="dehradun" aria-labelledby="city-dehradun">
-    <div class="city-head">
-      <h3 id="city-dehradun">Dehradun</h3>
-      <p>Flats at Doon Square, for slower weeks in the valley.</p>
-      <span class="count">2 homes</span>
-    </div>
-    <ul class="index">
-      <li>
-        <a class="row" href="/nestique/stays/doon-square-572/">
-          <span class="row-name">Doon Square 572</span>
-          <span class="row-meta"><span>Doon Square</span><span>Apartment</span></span>
-          <span class="row-thumb" aria-hidden="true"><div class="ph " role="img" aria-label="Photo of Doon Square 572 coming soon"><span>D</span></div></span>
-        </a>
-      </li>
-      <li>
-        <a class="row" href="/nestique/stays/doon-square-531/">
-          <span class="row-name">Doon Square 531</span>
-          <span class="row-meta"><span>Doon Square</span><span>Apartment</span></span>
-          <span class="row-thumb" aria-hidden="true"><div class="ph " role="img" aria-label="Photo of Doon Square 531 coming soon"><span>D</span></div></span>
-        </a>
-      </li>
-    </ul>
-  </section>
-  <section class="city" data-city="gurgaon" aria-labelledby="city-gurgaon">
-    <div class="city-head">
-      <h3 id="city-gurgaon">Gurgaon</h3>
-      <p>A city base for work trips and long stays.</p>
-      <span class="count">1 home</span>
-    </div>
-    <ul class="index">
-      <li>
-        <a class="row" href="/nestique/stays/gurgaon-1bhk/">
-          <span class="row-name">The Gurgaon Flat</span>
-          <span class="row-meta"><span>Gurgaon</span><span>1-bedroom flat</span></span>
-          <span class="row-thumb" aria-hidden="true"><div class="ph " role="img" aria-label="Photo of The Gurgaon Flat coming soon"><span>T</span></div></span>
-        </a>
-      </li>
-    </ul>
-  </section>
+<section id="stays" class="stays" aria-label="Stays">
+  <ul class="cards">
+    <li class="card" data-city="rishikesh" data-search="cozy tapovan tapovan vatika, tapovan rishikesh apartment">
+      <a href="/nestique/stays/cozy-tapovan/">
+        <div class="card-img">
+          <div class="ph " role="img" aria-label="Photo of Cozy Tapovan coming soon"><span>C</span></div>
+          <span class="card-tag">Rishikesh</span>
+        </div>
+        <div class="card-body">
+          <div class="card-top">
+            <h3>Cozy Tapovan</h3>
+            <p class="card-price"><span>Price on request</span></p>
+          </div>
+          <p class="card-loc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Tapovan Vatika, Tapovan, Rishikesh</p>
+          <ul class="card-facts">
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V21H3z"/><path d="M9 21v-6h6v6"/></svg>Apartment</li>
+            
+            
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10h16v6a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4zM2 10h2M20 10h2M9 6c0-1 1-1 1-2M14 6c0-1 1-1 1-2"/></svg>Full kitchen</li>
+          </ul>
+        </div>
+      </a>
+    </li>
+    <li class="card" data-city="rishikesh" data-search="tranquil tapovan vatika, tapovan rishikesh apartment">
+      <a href="/nestique/stays/tranquil/">
+        <div class="card-img">
+          <div class="ph " role="img" aria-label="Photo of Tranquil coming soon"><span>T</span></div>
+          <span class="card-tag">Rishikesh</span>
+        </div>
+        <div class="card-body">
+          <div class="card-top">
+            <h3>Tranquil</h3>
+            <p class="card-price"><span>Price on request</span></p>
+          </div>
+          <p class="card-loc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Tapovan Vatika, Tapovan, Rishikesh</p>
+          <ul class="card-facts">
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V21H3z"/><path d="M9 21v-6h6v6"/></svg>Apartment</li>
+            
+            
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10h16v6a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4zM2 10h2M20 10h2M9 6c0-1 1-1 1-2M14 6c0-1 1-1 1-2"/></svg>Full kitchen</li>
+          </ul>
+        </div>
+      </a>
+    </li>
+    <li class="card" data-city="rishikesh" data-search="serenity 85 ganges rishikesh apartment">
+      <a href="/nestique/stays/serenity/">
+        <div class="card-img">
+          <div class="ph " role="img" aria-label="Photo of Serenity coming soon"><span>S</span></div>
+          <span class="card-tag">Rishikesh</span>
+        </div>
+        <div class="card-body">
+          <div class="card-top">
+            <h3>Serenity</h3>
+            <p class="card-price"><span>Price on request</span></p>
+          </div>
+          <p class="card-loc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>85 Ganges, Rishikesh</p>
+          <ul class="card-facts">
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V21H3z"/><path d="M9 21v-6h6v6"/></svg>Apartment</li>
+            
+            
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10h16v6a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4zM2 10h2M20 10h2M9 6c0-1 1-1 1-2M14 6c0-1 1-1 1-2"/></svg>Full kitchen</li>
+          </ul>
+        </div>
+      </a>
+    </li>
+    <li class="card" data-city="rishikesh" data-search="the rishikesh house rishikesh rishikesh 3-bedroom home">
+      <a href="/nestique/stays/rishikesh-3bhk/">
+        <div class="card-img">
+          <div class="ph " role="img" aria-label="Photo of The Rishikesh House coming soon"><span>T</span></div>
+          <span class="card-tag">Rishikesh</span>
+        </div>
+        <div class="card-body">
+          <div class="card-top">
+            <h3>The Rishikesh House</h3>
+            <p class="card-price"><span>Price on request</span></p>
+          </div>
+          <p class="card-loc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Rishikesh</p>
+          <ul class="card-facts">
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V21H3z"/><path d="M9 21v-6h6v6"/></svg>3-bedroom home</li>
+            
+            
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10h16v6a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4zM2 10h2M20 10h2M9 6c0-1 1-1 1-2M14 6c0-1 1-1 1-2"/></svg>Full kitchen</li>
+          </ul>
+        </div>
+      </a>
+    </li>
+    <li class="card" data-city="dehradun" data-search="doon square 572 doon square dehradun apartment">
+      <a href="/nestique/stays/doon-square-572/">
+        <div class="card-img">
+          <div class="ph " role="img" aria-label="Photo of Doon Square 572 coming soon"><span>D</span></div>
+          <span class="card-tag">Dehradun</span>
+        </div>
+        <div class="card-body">
+          <div class="card-top">
+            <h3>Doon Square 572</h3>
+            <p class="card-price"><span>Price on request</span></p>
+          </div>
+          <p class="card-loc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Doon Square, Dehradun</p>
+          <ul class="card-facts">
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V21H3z"/><path d="M9 21v-6h6v6"/></svg>Apartment</li>
+            
+            
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10h16v6a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4zM2 10h2M20 10h2M9 6c0-1 1-1 1-2M14 6c0-1 1-1 1-2"/></svg>Full kitchen</li>
+          </ul>
+        </div>
+      </a>
+    </li>
+    <li class="card" data-city="dehradun" data-search="doon square 531 doon square dehradun apartment">
+      <a href="/nestique/stays/doon-square-531/">
+        <div class="card-img">
+          <div class="ph " role="img" aria-label="Photo of Doon Square 531 coming soon"><span>D</span></div>
+          <span class="card-tag">Dehradun</span>
+        </div>
+        <div class="card-body">
+          <div class="card-top">
+            <h3>Doon Square 531</h3>
+            <p class="card-price"><span>Price on request</span></p>
+          </div>
+          <p class="card-loc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Doon Square, Dehradun</p>
+          <ul class="card-facts">
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V21H3z"/><path d="M9 21v-6h6v6"/></svg>Apartment</li>
+            
+            
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10h16v6a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4zM2 10h2M20 10h2M9 6c0-1 1-1 1-2M14 6c0-1 1-1 1-2"/></svg>Full kitchen</li>
+          </ul>
+        </div>
+      </a>
+    </li>
+    <li class="card" data-city="gurgaon" data-search="the gurgaon flat gurgaon gurgaon 1-bedroom flat">
+      <a href="/nestique/stays/gurgaon-1bhk/">
+        <div class="card-img">
+          <div class="ph " role="img" aria-label="Photo of The Gurgaon Flat coming soon"><span>T</span></div>
+          <span class="card-tag">Gurgaon</span>
+        </div>
+        <div class="card-body">
+          <div class="card-top">
+            <h3>The Gurgaon Flat</h3>
+            <p class="card-price"><span>Price on request</span></p>
+          </div>
+          <p class="card-loc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Gurgaon</p>
+          <ul class="card-facts">
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V21H3z"/><path d="M9 21v-6h6v6"/></svg>1-bedroom flat</li>
+            
+            
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10h16v6a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4zM2 10h2M20 10h2M9 6c0-1 1-1 1-2M14 6c0-1 1-1 1-2"/></svg>Full kitchen</li>
+          </ul>
+        </div>
+      </a>
+    </li>
+  </ul>
+  <p class="empty" hidden>No stays match that search. <button type="button" class="link-btn" data-clear>Show all stays</button></p>
 </section>
 
 <section id="booking" class="booking" aria-labelledby="booking-title">
@@ -145,7 +220,7 @@
 <section id="faq" class="faq" aria-labelledby="faq-title">
   <h2 id="faq-title">Questions guests ask</h2>
   <div class="faq-list">
-    <details><summary>How do I book?</summary><p>Send us a booking request from the stay's page, or email us with your dates and number of guests. We reply with the total price and availability, and confirm once payment is done.</p></details><details><summary>When do I pay?</summary><p>After we confirm your dates. We share the total for your stay and the payment details by email.</p></details><details><summary>How does check-in work?</summary><p>All our homes have self check-in. Before you arrive we send the exact address, directions and how to get the keys.</p></details><details><summary>Can I book more than one home?</summary><p>Yes. Cozy Tapovan and Tranquil are in the same building, and so are the two Doon Square flats, which works well for families and groups. Mention it in your request.</p></details><details><summary>Are long stays possible?</summary><p>Yes. Tell us your dates and we'll share a price for weekly or monthly stays.</p></details><details><summary>Can I cook?</summary><p>Every home has a kitchen with cookware, so you can cook your own meals.</p></details>
+    <details><summary>How do I book?</summary><p>Send us a booking request from the stay's page, or email us with your dates and number of guests. We reply with the total price and availability, and confirm once payment is done.</p></details><details><summary>When do I pay?</summary><p>After we confirm your dates. We share the total for your stay and the payment details by email.</p></details><details><summary>How does check-in work?</summary><p>Before you arrive we send the exact address, directions and how to get the keys.</p></details><details><summary>Can I book more than one home?</summary><p>Yes. Cozy Tapovan and Tranquil are in the same building, and so are the two Doon Square flats, which works well for families and groups. Mention it in your request.</p></details><details><summary>Are long stays possible?</summary><p>Yes. Tell us your dates and we'll share a price for weekly or monthly stays.</p></details><details><summary>Can I cook?</summary><p>Every home has a kitchen with cookware, so you can cook your own meals.</p></details>
   </div>
 </section>
 </main>
