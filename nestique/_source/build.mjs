@@ -39,7 +39,7 @@ const mailto = (stay) => {
 
 const photo = (stay, i, cls = '') => {
   const src = stay.images[i];
-  if (src) return `<img class="${cls}" src="/${esc(src)}" alt="${esc(stay.name)}, photo ${i + 1}" loading="${i === 0 ? 'eager' : 'lazy'}" decoding="async">`;
+  if (src) return `<img class="${cls}" src="/${esc(src)}" alt="${esc(stay.imageAlts?.[i] || `${stay.name}, photo ${i + 1}`)}" loading="${i === 0 ? 'eager' : 'lazy'}" decoding="async">`;
   return `<div class="ph ${cls}" role="img" aria-label="Photo of ${esc(stay.name)} coming soon"><span>${esc(stay.name.charAt(0))}</span></div>`;
 };
 
@@ -139,6 +139,7 @@ const card = (s) => `
         <div class="card-img">
           ${photo(s, 0)}
           <span class="card-tag">${esc(cityName(s.city))}</span>
+          ${s.rating ? `<span class="card-rate" aria-label="Rated ${s.rating.score} out of 5 from ${s.rating.count} reviews">★ ${s.rating.score.toFixed(2)}</span>` : ''}
         </div>
         <div class="card-body">
           <div class="card-top">
@@ -244,8 +245,9 @@ data.stays.forEach((s) => {
   <header class="stay-head">
     <a class="back" href="/#stays">All stays</a>
     <h1>${esc(s.name)}</h1>
+    ${s.tagline ? `<p class="tagline">${esc(s.tagline)}</p>` : ''}
     <div class="stay-sub">
-      <p class="stay-where">${esc(s.type)} in ${esc(s.area)}, ${esc(cityName(s.city))}</p>
+      <p class="stay-where">${esc(s.type)} in ${esc(s.area)}, ${esc(cityName(s.city))}${s.rating ? ` <a class="rate-link" href="#reviews"><span class="star" aria-hidden="true">★</span> ${s.rating.score.toFixed(2)} <span>(${s.rating.count} reviews)</span></a>` : ''}</p>
       <button type="button" class="share" data-share>Share this stay</button>
     </div>
   </header>
@@ -260,13 +262,29 @@ data.stays.forEach((s) => {
       <dl class="facts">
         ${facts.map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join('')}
       </dl>
+      ${s.host ? `<p class="host"><span class="host-av" aria-hidden="true">${esc(s.host.name.charAt(0))}</span><span><strong>Hosted by ${esc(s.host.name)}</strong><br>${s.host.years} years hosting</span></p>` : ''}
+      ${s.highlights ? `<ul class="highlights">${s.highlights.map(([t, d]) => `<li><strong>${esc(t)}</strong><span>${esc(d)}</span></li>`).join('')}</ul>` : ''}
       <h2>About this home</h2>
       <p>${esc(s.description)}</p>
       <h2>What's included</h2>
+      ${s.amenityGroups ? `
       <ul class="amen">${s.amenities.map((a) => `<li>${esc(a)}</li>`).join('')}</ul>
+      <details class="all-amen">
+        <summary>Show all ${s.amenityGroups.reduce((n, [, l]) => n + l.length, 0)} amenities</summary>
+        ${s.amenityGroups.map(([g, l]) => `<h3>${esc(g)}</h3><ul class="amen">${l.map((a) => `<li>${esc(a)}</li>`).join('')}</ul>`).join('')}
+        ${s.notIncluded ? `<h3>Not included</h3><ul class="amen not">${s.notIncluded.map((a) => `<li><s>${esc(a)}</s></li>`).join('')}</ul>` : ''}
+      </details>` : `<ul class="amen">${s.amenities.map((a) => `<li>${esc(a)}</li>`).join('')}</ul>`}
       <h2>Where it is</h2>
       <p>${esc(s.area)}, ${esc(cityName(s.city))}. We send the exact address and directions once your booking is confirmed.</p>
       <p><a class="link" href="${map}" target="_blank" rel="noopener">Open the area in Google Maps</a></p>
+      ${s.checkin || s.rules ? `
+      <h2>Things to know</h2>
+      <div class="know">
+        ${s.checkin ? `<div><h3>Check-in and check-out</h3><p>Check-in ${esc(s.checkin.toLowerCase())}<br>Check-out ${esc(s.checkout.toLowerCase())}</p>${s.availability ? `<p>${s.availability.map(esc).join('<br>')}</p>` : ''}</div>` : ''}
+        ${s.rules ? `<div><h3>House rules</h3><ul>${s.rules.map(([r, n]) => `<li>${esc(r)}${n ? `<span>${esc(n)}</span>` : ''}</li>`).join('')}</ul></div>` : ''}
+        ${s.amenityGroups?.find(([g]) => g === 'Home safety') ? `<div><h3>Safety</h3><ul>${s.amenityGroups.find(([g]) => g === 'Home safety')[1].map((a) => `<li>${esc(a)}</li>`).join('')}</ul></div>` : ''}
+      </div>
+      ${(s.extraRules || []).map(([t, d]) => `<div class="notice"><h3>${esc(t)}</h3><p>${esc(d)}</p></div>`).join('')}` : ''}
     </div>
 
     <aside class="book-box" id="book" aria-labelledby="book-title">
@@ -280,7 +298,7 @@ data.stays.forEach((s) => {
           <label>Check-out<input type="date" name="checkout" required></label>
         </div>
         <p class="nights" aria-live="polite"></p>
-        <label>Guests<input type="number" name="guests" min="1" max="${maxGuests}" value="2" required inputmode="numeric"></label>
+        <label>Guests<input type="number" name="guests" min="1" max="${maxGuests}" value="${Math.min(2, maxGuests)}" required inputmode="numeric"></label>
         <label>Your name<input type="text" name="name" autocomplete="name" required></label>
         <label>Email<input type="email" name="email" autocomplete="email" required></label>
         <label>Phone <span class="opt">(optional)</span><input type="tel" name="phone" autocomplete="tel" inputmode="tel"></label>
@@ -292,6 +310,17 @@ data.stays.forEach((s) => {
       <p class="small alt">Prefer email? <a href="${mailto(s)}">Write to us directly</a></p>
     </aside>
   </div>
+
+  ${s.rating ? `
+  <section id="reviews" class="reviews" aria-labelledby="reviews-title">
+    <div class="rev-score">
+      <p class="rev-big" id="reviews-title">${s.rating.score.toFixed(2)}</p>
+      <p>Average guest rating from ${s.rating.count} reviews</p>
+    </div>
+    <ul class="rev-cats">
+      ${s.rating.categories.map(([k, v]) => `<li><span>${esc(k)}</span><strong>${v.toFixed(1)}</strong><i style="--w:${(v / 5) * 100}%"></i></li>`).join('')}
+    </ul>
+  </section>` : ''}
 
   <section class="more" aria-labelledby="more-title">
     <h2 id="more-title">Other stays</h2>
@@ -310,6 +339,12 @@ data.stays.forEach((s) => {
 <a class="mobile-book" href="#book">Request to book</a>`,
   }));
 });
+
+// Old addresses keep working
+data.stays.forEach((s) => (s.oldSlugs || []).forEach((old) => {
+  const to = `${BASE}stays/${s.slug}/`;
+  write(`stays/${old}/index.html`, `<!doctype html><meta charset="utf-8"><title>${esc(s.name)} | Nestique</title><link rel="canonical" href="${SITE}/stays/${s.slug}/"><meta http-equiv="refresh" content="0; url=${to}"><a href="/stays/${s.slug}/">${esc(s.name)}</a>`);
+}));
 
 // ---------- Contact ----------
 write('contact/index.html', layout({

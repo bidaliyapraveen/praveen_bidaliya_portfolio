@@ -137,26 +137,219 @@
       "images": []
     },
     {
-      "slug": "doon-square-531",
-      "name": "Doon Square 531",
-      "city": "dehradun",
-      "area": "Doon Square",
-      "unit": "531",
-      "type": "Apartment",
-      "summary": "Our second Doon Square flat, a few floors from 572.",
-      "description": "Set up like its neighbour 572, with a full kitchen and fresh linen. Book both when you're travelling with family or friends.",
-      "guests": null,
-      "bedrooms": null,
-      "beds": null,
-      "baths": null,
-      "price": null,
-      "amenities": [
-        "Wi-Fi",
-        "Full kitchen",
-        "Fresh linen and towels"
+      "slug": "doon-vista-studio",
+      "oldSlugs": [
+        "doon-square-531"
       ],
-      "mapQuery": "Doon Square, Dehradun",
-      "images": []
+      "name": "Doon Vista Studio",
+      "tagline": "Mountain view, parking and Wi-Fi",
+      "city": "dehradun",
+      "area": "Doon Square, IT Park",
+      "unit": "531",
+      "type": "Studio apartment",
+      "summary": "A stylish studio with mountain views and a private balcony, a minute's walk from IT Park.",
+      "description": "Enjoy a stylish experience at this centrally located studio. The bedroom opens onto a private balcony with mountain views, and there's a dedicated workspace, air conditioning and a kitchen where you can cook your own meals. IT Park is about a one-minute walk away, with Dehradun's cafés and sights a short drive from here.",
+      "guests": 3,
+      "bedrooms": 1,
+      "beds": 1,
+      "baths": 1,
+      "price": null,
+      "rating": {
+        "score": 4.82,
+        "count": 11,
+        "categories": [
+          [
+            "Cleanliness",
+            4.9
+          ],
+          [
+            "Accuracy",
+            4.9
+          ],
+          [
+            "Check-in",
+            5.0
+          ],
+          [
+            "Communication",
+            4.9
+          ],
+          [
+            "Location",
+            4.8
+          ],
+          [
+            "Value",
+            4.9
+          ]
+        ]
+      },
+      "host": {
+        "name": "Poonam",
+        "years": 5
+      },
+      "highlights": [
+        [
+          "In IT Park",
+          "IT Park is about a 1-minute walk away, with Dehradun's cafés and sights a drive from here."
+        ],
+        [
+          "Private balcony",
+          "Step out for fresh air and mountain views, with seating for two."
+        ],
+        [
+          "Helpful, responsive host",
+          "Recent guests often mention how helpful and responsive the hosting is."
+        ]
+      ],
+      "amenities": [
+        "Mountain view",
+        "Wi-Fi",
+        "Air conditioning",
+        "Kitchen",
+        "Dedicated workspace",
+        "Private balcony",
+        "Paid parking"
+      ],
+      "amenityGroups": [
+        [
+          "Scenic views",
+          [
+            "Mountain view"
+          ]
+        ],
+        [
+          "Bathroom",
+          [
+            "Bath",
+            "Hairdryer",
+            "Cleaning products",
+            "Shampoo",
+            "Body soap",
+            "Bidet",
+            "Hot water",
+            "Shower gel"
+          ]
+        ],
+        [
+          "Bedroom and laundry",
+          [
+            "Essentials: towels, bed sheets, soap and toilet paper",
+            "Hangers",
+            "Iron",
+            "Clothes storage"
+          ]
+        ],
+        [
+          "Entertainment",
+          [
+            "TV"
+          ]
+        ],
+        [
+          "Heating and cooling",
+          [
+            "Air conditioning"
+          ]
+        ],
+        [
+          "Home safety",
+          [
+            "Smoke alarm",
+            "Carbon monoxide alarm",
+            "Fire extinguisher",
+            "First aid kit"
+          ]
+        ],
+        [
+          "Internet and office",
+          [
+            "Wi-Fi",
+            "Dedicated workspace"
+          ]
+        ],
+        [
+          "Kitchen and dining",
+          [
+            "Kitchen where you can cook your own meals",
+            "Fridge"
+          ]
+        ],
+        [
+          "Outdoor",
+          [
+            "Patio or balcony",
+            "Outdoor dining area"
+          ]
+        ],
+        [
+          "Parking and facilities",
+          [
+            "Lift, at least 132 cm deep with an 81 cm doorway",
+            "Paid parking on premises",
+            "Gated community"
+          ]
+        ],
+        [
+          "Services",
+          [
+            "Pets allowed (assistance animals always allowed)",
+            "Smoking allowed",
+            "Long-term stays of 28 days or more"
+          ]
+        ]
+      ],
+      "notIncluded": [
+        "Exterior security cameras on property",
+        "Washing machine",
+        "Tumble dryer",
+        "Heating"
+      ],
+      "checkin": "After 1:00 pm",
+      "checkout": "Before 10:00 am",
+      "availability": [
+        "1 to 365 night stays",
+        "Same-day bookings possible"
+      ],
+      "rules": [
+        [
+          "Up to 3 overnight guests",
+          ""
+        ],
+        [
+          "Pets allowed",
+          "1 maximum"
+        ],
+        [
+          "Smoking is allowed",
+          "Including vaping and e-cigarettes"
+        ],
+        [
+          "Lock up at checkout",
+          ""
+        ]
+      ],
+      "extraRules": [
+        [
+          "Society guest policy",
+          "As per the society's rules and security guidelines, accommodation for foreign nationals is not permitted at the property. We appreciate your understanding; this policy is in place for the safety and security of all residents and guests."
+        ]
+      ],
+      "mapQuery": "IT Park, Dehradun",
+      "images": [
+        "photos/doon-vista-studio/1-bedroom.jpg",
+        "photos/doon-vista-studio/2-studio.jpg",
+        "photos/doon-vista-studio/3-balcony-night.jpg",
+        "photos/doon-vista-studio/4-art-wall.jpg",
+        "photos/doon-vista-studio/5-mountain-view.jpg"
+      ],
+      "imageAlts": [
+        "Bedroom with upholstered bed and balcony door looking out to the hills",
+        "Studio with desk, TV and sofa seating",
+        "Balcony at night with wicker chairs and city lights",
+        "Art wall leading to the bedroom",
+        "Balcony view of the mountains over IT Park"
+      ]
     },
     {
       "slug": "gurgaon-1bhk",
