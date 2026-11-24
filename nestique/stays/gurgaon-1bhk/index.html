@@ -17,9 +17,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/nestique/assets/site.css?v=a1d5b668">
+<link rel="stylesheet" href="/nestique/assets/site.css?v=ba523515">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Accommodation","name":"The Gurgaon Flat","description":"A calm one-bedroom in Gurgaon with Wi-Fi and a kitchen, so a work trip feels less like a hotel stay.","url":"https://praveenbidaliya.com/nestique/stays/gurgaon-1bhk/","address":{"@type":"PostalAddress","addressLocality":"Gurgaon","streetAddress":"Gurgaon","addressCountry":"IN"},"numberOfRooms":1,"amenityFeature":[{"@type":"LocationFeatureSpecification","name":"Wi-Fi","value":true},{"@type":"LocationFeatureSpecification","name":"Full kitchen","value":true},{"@type":"LocationFeatureSpecification","name":"Fresh linen and towels","value":true}]}</script>
-<script src="/nestique/assets/site.js?v=5d8bcd53" defer></script>
+<script src="/nestique/assets/site.js?v=001e1646" defer></script>
 </head>
 <body class="p-stay">
 <a class="skip" href="#main">Skip to content</a>
@@ -106,14 +106,21 @@
           <label><span class="lt">Check-in</span><input type="date" name="checkin" required></label>
           <label><span class="lt">Check-out</span><input type="date" name="checkout" required></label>
         </div>
-        <p class="nights" aria-live="polite"></p>
         <label><span class="lt">Guests</span><input type="number" name="guests" min="1" max="12" value="2" required inputmode="numeric"></label>
+        <p class="nights" aria-live="polite"></p>
+        <button class="btn btn-full step-next" type="button">Request to book</button>
+        <div class="step2">
+        <p class="step-summary"></p>
         <label><span class="lt">Your name</span><input type="text" name="name" autocomplete="name" required></label>
+        <div class="pair">
         <label><span class="lt">Email</span><input type="email" name="email" autocomplete="email" required></label>
         <label><span class="lt">Phone <span class="opt">(optional)</span></span><input type="tel" name="phone" autocomplete="tel" inputmode="tel"></label>
-        <label><span class="lt">Anything we should know? <span class="opt">(optional)</span></span><textarea name="message" rows="3"></textarea></label>
+        </div>
+        <label><span class="lt">Anything we should know? <span class="opt">(optional)</span></span><textarea name="message" rows="2"></textarea></label>
         <p class="form-error" role="alert"></p>
         <button class="btn btn-full" type="submit">Send booking request</button>
+        <button class="link-btn step-back" type="button">Change dates or guests</button>
+        </div>
         <p class="small">You won't be charged yet. We reply with the total and availability, usually within a day.</p>
       </form>
       <p class="small alt">Prefer email? <a href="mailto:thenestiquerishikesh@gmail.com?subject=Booking%20enquiry%3A%20The%20Gurgaon%20Flat&body=Hi%20Nestique%2C%0A%0AI'd%20like%20to%20book%20The%20Gurgaon%20Flat%20(Gurgaon).%0A%0ACheck-in%20date%3A%0ACheck-out%20date%3A%0ANumber%20of%20guests%3A%0A%0AThanks%2C%0A">Write to us directly</a></p>

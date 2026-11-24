@@ -217,3 +217,40 @@
 })();
 // Header "Request to book" jumps to the form on stay pages
 (() => { const box = document.getElementById('book'); const cta = document.querySelector('.top .btn-sm'); if (box && cta) cta.setAttribute('href', '#book'); })();
+
+// Amenities pop-up
+(() => {
+  const d = document.querySelector('dialog.amen-dialog');
+  if (!d) return;
+  document.querySelectorAll('[data-open-amen]').forEach((b) => b.addEventListener('click', () => d.showModal()));
+  d.querySelector('.amen-close').addEventListener('click', () => d.close());
+  d.addEventListener('click', (e) => { if (e.target === d) d.close(); });
+})();
+
+// Booking box: step 1 dates and guests, step 2 contact details
+(() => {
+  const form = document.querySelector('.book-box .book-form');
+  if (!form) return;
+  form.classList.add('stepped');
+  const next = form.querySelector('.step-next');
+  const back = form.querySelector('.step-back');
+  const err = form.querySelector('.form-error');
+  const sum = form.querySelector('.step-summary');
+  const { checkin: ci, checkout: co, guests: g } = form.elements;
+  const fmt = (v) => new Date(v + 'T00:00').toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
+  next.addEventListener('click', () => {
+    err.textContent = '';
+    [ci, co, g].forEach((el) => el.removeAttribute('aria-invalid'));
+    const p = [];
+    if (!ci.value) { ci.setAttribute('aria-invalid', 'true'); p.push('Add a check-in date.'); }
+    if (!co.value) { co.setAttribute('aria-invalid', 'true'); p.push('Add a check-out date.'); }
+    if (ci.value && co.value && co.value <= ci.value) { co.setAttribute('aria-invalid', 'true'); p.push('Check-out must be after check-in.'); }
+    if (!g.checkValidity()) { g.setAttribute('aria-invalid', 'true'); p.push(`Guests must be between ${g.min} and ${g.max}.`); }
+    if (p.length) { err.textContent = p.join(' '); form.querySelector('[aria-invalid]')?.focus(); return; }
+    const n = Math.round((new Date(co.value) - new Date(ci.value)) / 86400000);
+    sum.textContent = `${fmt(ci.value)} to ${fmt(co.value)}, ${n} ${n === 1 ? 'night' : 'nights'}, ${g.value} ${g.value === '1' ? 'guest' : 'guests'}`;
+    form.classList.add('on-step2');
+    form.elements.name.focus();
+  });
+  back.addEventListener('click', () => { form.classList.remove('on-step2'); ci.focus(); });
+})();

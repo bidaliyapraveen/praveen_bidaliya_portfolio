@@ -252,7 +252,7 @@ data.stays.forEach((s) => {
     <h1>${esc(s.name)}</h1>
     ${s.tagline ? `<p class="tagline">${esc(s.tagline)}</p>` : ''}
     <div class="stay-sub">
-      <p class="stay-where">${esc(s.type)} in ${esc(s.area)}, ${esc(cityName(s.city))}${s.rating ? ` <a class="rate-link" href="#reviews"><span class="star" aria-hidden="true">★</span> ${s.rating.score.toFixed(2)} <span>(${s.rating.count} reviews)</span></a>` : ''}</p>
+      <p class="stay-where">${esc(s.type)} in ${esc(s.area)}, ${esc(cityName(s.city))}${s.rating ? ` <a class="rate-link" href="#reviews"><span class="star" aria-hidden="true">★</span> ${s.rating.score.toFixed(2)}</a>` : ''}</p>
       <button type="button" class="share" data-share>Share this stay</button>
     </div>
   </header>
@@ -275,11 +275,14 @@ data.stays.forEach((s) => {
       <h2>What's included</h2>
       ${s.amenityGroups ? `
       <ul class="amen">${s.amenities.map((a) => `<li>${esc(a)}</li>`).join('')}</ul>
-      <details class="all-amen">
-        <summary>Show all ${s.amenityGroups.reduce((n, [, l]) => n + l.length, 0)} amenities</summary>
-        ${s.amenityGroups.map(([g, l]) => `<h3>${esc(g)}</h3><ul class="amen">${l.map((a) => `<li>${esc(a)}</li>`).join('')}</ul>`).join('')}
-        ${s.notIncluded ? `<h3>Not included</h3><ul class="amen not">${s.notIncluded.map((a) => `<li><s>${esc(a)}</s></li>`).join('')}</ul>` : ''}
-      </details>` : `<ul class="amen">${s.amenities.map((a) => `<li>${esc(a)}</li>`).join('')}</ul>`}
+      <button type="button" class="all-amen-btn" data-open-amen>Show all ${s.amenityGroups.reduce((n, [, l]) => n + l.length, 0)} amenities</button>
+      <dialog class="amen-dialog" aria-labelledby="amen-title">
+        <div class="amen-head"><h2 id="amen-title">What this place offers</h2><button type="button" class="amen-close" aria-label="Close amenities">Close</button></div>
+        <div class="amen-body">
+        ${s.amenityGroups.map(([g, l]) => `<h3>${esc(g)}</h3><ul class="amen-list">${l.map((a) => `<li>${esc(a)}</li>`).join('')}</ul>`).join('')}
+        ${s.notIncluded ? `<h3>Not included</h3><ul class="amen-list not">${s.notIncluded.map((a) => `<li><s>${esc(a)}</s></li>`).join('')}</ul>` : ''}
+        </div>
+      </dialog>` : `<ul class="amen">${s.amenities.map((a) => `<li>${esc(a)}</li>`).join('')}</ul>`}
       <h2>Where it is</h2>
       <p>${esc(s.area)}, ${esc(cityName(s.city))}. We send the exact address and directions once your booking is confirmed.</p>
       <p><a class="link" href="${map}" target="_blank" rel="noopener">Open the area in Google Maps</a></p>
@@ -303,14 +306,21 @@ data.stays.forEach((s) => {
           <label>Check-in<input type="date" name="checkin" required></label>
           <label>Check-out<input type="date" name="checkout" required></label>
         </div>
-        <p class="nights" aria-live="polite"></p>
         <label>Guests<input type="number" name="guests" min="1" max="${maxGuests}" value="${Math.min(2, maxGuests)}" required inputmode="numeric"></label>
+        <p class="nights" aria-live="polite"></p>
+        <button class="btn btn-full step-next" type="button">Request to book</button>
+        <div class="step2">
+        <p class="step-summary"></p>
         <label>Your name<input type="text" name="name" autocomplete="name" required></label>
+        <div class="pair">
         <label>Email<input type="email" name="email" autocomplete="email" required></label>
         <label>Phone <span class="opt">(optional)</span><input type="tel" name="phone" autocomplete="tel" inputmode="tel"></label>
-        <label>Anything we should know? <span class="opt">(optional)</span><textarea name="message" rows="3"></textarea></label>
+        </div>
+        <label>Anything we should know? <span class="opt">(optional)</span><textarea name="message" rows="2"></textarea></label>
         <p class="form-error" role="alert"></p>
         <button class="btn btn-full" type="submit">Send booking request</button>
+        <button class="link-btn step-back" type="button">Change dates or guests</button>
+        </div>
         <p class="small">You won't be charged yet. We reply with the total and availability, usually within a day.</p>
       </form>
       <p class="small alt">Prefer email? <a href="${mailto(s)}">Write to us directly</a></p>
