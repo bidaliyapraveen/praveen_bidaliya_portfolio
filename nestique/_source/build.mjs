@@ -140,7 +140,7 @@ const icon = {
 
 const card = (s) => `
     <li class="card" data-city="${s.city}" data-guests="${s.guests || ""}" data-search="${esc([s.name, s.area, cityName(s.city), s.type].join(' ').toLowerCase())}">
-      <a href="/stays/${s.slug}/" data-base="/stays/${s.slug}/">
+      <a href="/stays/${s.slug}/">
         <div class="card-img">
           ${photo(s, 0)}
           <span class="card-tag">${esc(cityName(s.city))}</span>
@@ -180,29 +180,19 @@ write('index.html', layout({
 <section class="hero hero-center">
   <h1>Stay like you live here.<br><span>Homes by the Ganga and the hills.</span></h1>
   <p class="hero-sub">Calm, fully equipped homes in Rishikesh, Dehradun and Gurgaon. Pick a stay, send your dates and book directly with us.</p>
-  <form class="finder" id="finder" action="#stays" novalidate>
-    <label class="f-field f-where"><span>Where</span>
-      <select name="city">
-        <option value="all">All cities</option>
-        ${data.cities.map((c) => `<option value="${c.id}">${esc(c.name)}</option>`).join('')}
-      </select>
-    </label>
-    <label class="f-field"><span>Check-in</span><input type="date" name="checkin"></label>
-    <label class="f-field"><span>Check-out</span><input type="date" name="checkout"></label>
-    <label class="f-field f-guests"><span>Guests</span><input type="number" name="guests" min="1" max="20" value="2" inputmode="numeric"></label>
-    <button class="f-go" type="submit">${icon.search}<span>Search</span></button>
-  </form>
-  <p class="finder-error" role="alert"></p>
+
 </section>
 
-<section id="stays" class="stays" aria-labelledby="results-title">
+<section id="stays" class="stays" aria-label="Stays">
   <div class="results-head">
-    <h2 id="results-title">All stays</h2>
-    <p class="results-meta" aria-live="polite">${data.stays.length} homes</p>
+    <div class="city-tabs" role="tablist" aria-label="Stays by city">
+      <button type="button" role="tab" data-tab="all" aria-selected="true">All<span>${data.stays.length}</span></button>
+      ${data.cities.map((c) => `<button type="button" role="tab" data-tab="${c.id}" aria-selected="false">${esc(c.name)}<span>${data.stays.filter((s) => s.city === c.id).length}</span></button>`).join('')}
+    </div>
   </div>
   <ul class="cards">${[...data.stays].sort((a, z) => (z.images.length > 0) - (a.images.length > 0)).map(card).join('')}
   </ul>
-  <p class="empty" hidden>No stays match your search. <button type="button" class="link-btn" data-clear>Show all stays</button></p>
+  
 </section>
 
 <section id="booking" class="booking" aria-labelledby="booking-title">

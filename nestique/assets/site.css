@@ -544,3 +544,16 @@ h1, h2, h3 { font-variation-settings: "opsz" 96, "wdth" 100; letter-spacing: -0.
 .book-form .pair { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 10px; }
 .book-box .book-form label { font-size: 14px; gap: 4px; }
 .book-box .alt { font-size: 13px; }
+
+/* ===== v7: city tabs ===== */
+.hero-center { padding-bottom: 0; }
+.results-head { justify-content: flex-start; margin-bottom: 28px; }
+.city-tabs { display: flex; gap: 8px; flex-wrap: wrap; }
+.city-tabs button {
+  display: inline-flex; align-items: center; gap: 8px; font: inherit; font-size: 16px; font-weight: 600; cursor: pointer;
+  padding: 10px 18px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); color: var(--river);
+}
+.city-tabs button span { font-size: 13px; font-weight: 700; min-width: 22px; padding: 1px 7px; border-radius: 999px; background: var(--mist); color: var(--stone); text-align: center; }
+.city-tabs button:hover:not([aria-selected="true"]) { background: #eef1ec; }
+.city-tabs button[aria-selected="true"] { background: var(--river); border-color: var(--river); color: #fff; }
+.city-tabs button[aria-selected="true"] span { background: rgba(255, 255, 255, .18); color: #fff; }

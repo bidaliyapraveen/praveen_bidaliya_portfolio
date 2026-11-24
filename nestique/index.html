@@ -17,9 +17,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/nestique/assets/site.css?v=ba523515">
+<link rel="stylesheet" href="/nestique/assets/site.css?v=c71e51c8">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Nestique","url":"https://praveenbidaliya.com/nestique","email":"thenestiquerishikesh@gmail.com"}</script>
-<script src="/nestique/assets/site.js?v=001e1646" defer></script>
+<script src="/nestique/assets/site.js?v=d58d1c8e" defer></script>
 </head>
 <body class="p-home">
 <a class="skip" href="#main">Skip to content</a>
@@ -42,29 +42,19 @@
 <section class="hero hero-center">
   <h1>Stay like you live here.<br><span>Homes by the Ganga and the hills.</span></h1>
   <p class="hero-sub">Calm, fully equipped homes in Rishikesh, Dehradun and Gurgaon. Pick a stay, send your dates and book directly with us.</p>
-  <form class="finder" id="finder" action="#stays" novalidate>
-    <label class="f-field f-where"><span>Where</span>
-      <select name="city">
-        <option value="all">All cities</option>
-        <option value="rishikesh">Rishikesh</option><option value="dehradun">Dehradun</option><option value="gurgaon">Gurgaon</option>
-      </select>
-    </label>
-    <label class="f-field"><span>Check-in</span><input type="date" name="checkin"></label>
-    <label class="f-field"><span>Check-out</span><input type="date" name="checkout"></label>
-    <label class="f-field f-guests"><span>Guests</span><input type="number" name="guests" min="1" max="20" value="2" inputmode="numeric"></label>
-    <button class="f-go" type="submit"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search</span></button>
-  </form>
-  <p class="finder-error" role="alert"></p>
+
 </section>
 
-<section id="stays" class="stays" aria-labelledby="results-title">
+<section id="stays" class="stays" aria-label="Stays">
   <div class="results-head">
-    <h2 id="results-title">All stays</h2>
-    <p class="results-meta" aria-live="polite">7 homes</p>
+    <div class="city-tabs" role="tablist" aria-label="Stays by city">
+      <button type="button" role="tab" data-tab="all" aria-selected="true">All<span>7</span></button>
+      <button type="button" role="tab" data-tab="rishikesh" aria-selected="false">Rishikesh<span>4</span></button><button type="button" role="tab" data-tab="dehradun" aria-selected="false">Dehradun<span>2</span></button><button type="button" role="tab" data-tab="gurgaon" aria-selected="false">Gurgaon<span>1</span></button>
+    </div>
   </div>
   <ul class="cards">
     <li class="card" data-city="rishikesh" data-guests="" data-search="tapovan tranquil deecon valley, tapovan rishikesh apartment">
-      <a href="/nestique/stays/tapovan-tranquil/" data-base="/stays/tapovan-tranquil/">
+      <a href="/nestique/stays/tapovan-tranquil/">
         <div class="card-img">
           <img class="" src="/nestique/photos/tapovan-tranquil/bedroom-sm.jpg" alt="Bedroom with a double bed, wall art and a door to the balcony" loading="eager" decoding="async">
           <span class="card-tag">Rishikesh</span>
@@ -86,7 +76,7 @@
       </a>
     </li>
     <li class="card" data-city="dehradun" data-guests="3" data-search="doon vista studio doon square, it park dehradun studio apartment">
-      <a href="/nestique/stays/doon-vista-studio/" data-base="/stays/doon-vista-studio/">
+      <a href="/nestique/stays/doon-vista-studio/">
         <div class="card-img">
           <img class="" src="/nestique/photos/doon-vista-studio/bedroom-mountain-view-sm.jpg" alt="Bedroom with upholstered bed and a balcony door looking out to the hills" loading="eager" decoding="async">
           <span class="card-tag">Dehradun</span>
@@ -108,7 +98,7 @@
       </a>
     </li>
     <li class="card" data-city="rishikesh" data-guests="" data-search="cozy tapovan tapovan vatika, tapovan rishikesh apartment">
-      <a href="/nestique/stays/cozy-tapovan/" data-base="/stays/cozy-tapovan/">
+      <a href="/nestique/stays/cozy-tapovan/">
         <div class="card-img">
           <div class="ph " role="img" aria-label="Photo of Cozy Tapovan coming soon"><span>C</span></div>
           <span class="card-tag">Rishikesh</span>
@@ -130,7 +120,7 @@
       </a>
     </li>
     <li class="card" data-city="rishikesh" data-guests="" data-search="serenity 85 ganges rishikesh apartment">
-      <a href="/nestique/stays/serenity/" data-base="/stays/serenity/">
+      <a href="/nestique/stays/serenity/">
         <div class="card-img">
           <div class="ph " role="img" aria-label="Photo of Serenity coming soon"><span>S</span></div>
           <span class="card-tag">Rishikesh</span>
@@ -152,7 +142,7 @@
       </a>
     </li>
     <li class="card" data-city="rishikesh" data-guests="" data-search="the rishikesh house rishikesh rishikesh 3-bedroom home">
-      <a href="/nestique/stays/rishikesh-3bhk/" data-base="/stays/rishikesh-3bhk/">
+      <a href="/nestique/stays/rishikesh-3bhk/">
         <div class="card-img">
           <div class="ph " role="img" aria-label="Photo of The Rishikesh House coming soon"><span>T</span></div>
           <span class="card-tag">Rishikesh</span>
@@ -174,7 +164,7 @@
       </a>
     </li>
     <li class="card" data-city="dehradun" data-guests="" data-search="doon square 572 doon square dehradun apartment">
-      <a href="/nestique/stays/doon-square-572/" data-base="/stays/doon-square-572/">
+      <a href="/nestique/stays/doon-square-572/">
         <div class="card-img">
           <div class="ph " role="img" aria-label="Photo of Doon Square 572 coming soon"><span>D</span></div>
           <span class="card-tag">Dehradun</span>
@@ -196,7 +186,7 @@
       </a>
     </li>
     <li class="card" data-city="gurgaon" data-guests="" data-search="the gurgaon flat gurgaon gurgaon 1-bedroom flat">
-      <a href="/nestique/stays/gurgaon-1bhk/" data-base="/stays/gurgaon-1bhk/">
+      <a href="/nestique/stays/gurgaon-1bhk/">
         <div class="card-img">
           <div class="ph " role="img" aria-label="Photo of The Gurgaon Flat coming soon"><span>T</span></div>
           <span class="card-tag">Gurgaon</span>
@@ -218,7 +208,7 @@
       </a>
     </li>
   </ul>
-  <p class="empty" hidden>No stays match your search. <button type="button" class="link-btn" data-clear>Show all stays</button></p>
+  
 </section>
 
 <section id="booking" class="booking" aria-labelledby="booking-title">

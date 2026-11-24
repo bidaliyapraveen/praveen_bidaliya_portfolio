@@ -18,77 +18,29 @@
     }));
   }
 
-  // Home: search by city, dates and guests
-  const iso0 = (d) => new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
-  const fmt = (v) => new Date(v + 'T00:00').toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
-  const finder = $('#finder');
-  if (finder) {
-    const f = finder.elements;
+  // Home: city tabs
+  const tabs = $$('.city-tabs [data-tab]');
+  if (tabs.length) {
     const cards = $$('.stays .card');
-    const empty = $('.stays .empty');
-    const title = $('#results-title');
-    const meta = $('.results-meta');
-    const ferr = $('.finder-error');
-    const cityLabel = (id) => [...f.city.options].find((o) => o.value === id)?.text || 'All cities';
-    const today = iso0(new Date());
-    f.checkin.min = today; f.checkout.min = today;
-    f.checkin.addEventListener('change', () => {
-      if (!f.checkin.value) return;
-      const n = new Date(f.checkin.value); n.setDate(n.getDate() + 1);
-      f.checkout.min = iso0(n);
-      if (!f.checkout.value || f.checkout.value <= f.checkin.value) f.checkout.value = iso0(n);
-    });
-
-    const apply = (scroll) => {
-      const city = f.city.value;
-      const guests = Number(f.guests.value) || 0;
-      const ci = f.checkin.value; const co = f.checkout.value;
-      let shown = 0;
-      cards.forEach((c) => {
-        const cap = Number(c.dataset.guests) || 0; // 0 = not known yet, keep it
-        const ok = (city === 'all' || c.dataset.city === city) && (!cap || !guests || cap >= guests);
-        c.hidden = !ok; if (ok) shown++;
-        // carry dates and guests to the stay page so the booking form is pre-filled
-        const a = $('a', c);
-        const url = new URL(a.getAttribute('href'), location.href);
-        url.search = '';
-        if (ci) url.searchParams.set('checkin', ci);
-        if (co) url.searchParams.set('checkout', co);
-        if (guests) url.searchParams.set('guests', guests);
-        a.setAttribute('href', url.pathname + url.search);
-      });
-      title.textContent = city === 'all' ? 'All stays' : `Stays in ${cityLabel(city)}`;
-      const bits = [`${shown} ${shown === 1 ? 'home' : 'homes'}`];
-      if (ci && co) bits.push(`${fmt(ci)} to ${fmt(co)}`);
-      if (guests) bits.push(`${guests} ${guests === 1 ? 'guest' : 'guests'}`);
-      meta.textContent = bits.join(', ');
-      empty.hidden = shown > 0;
-      try { sessionStorage.setItem('nestique-search', JSON.stringify({ city, ci, co, guests })); } catch (_) {}
-      if (scroll) $('#stays').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+    const select = (id, push) => {
+      tabs.forEach((t) => t.setAttribute('aria-selected', String(t.dataset.tab === id)));
+      cards.forEach((c) => { c.hidden = id !== 'all' && c.dataset.city !== id; });
+      if (push) history.replaceState(null, '', id === 'all' ? location.pathname : `#${id}`);
     };
-
-    finder.addEventListener('submit', (e) => {
-      e.preventDefault();
-      ferr.textContent = '';
-      if ((f.checkin.value && !f.checkout.value) || (!f.checkin.value && f.checkout.value)) { ferr.textContent = 'Add both check-in and check-out dates, or leave both empty.'; return; }
-      if (f.checkin.value && f.checkout.value <= f.checkin.value) { ferr.textContent = 'Check-out must be after check-in.'; return; }
-      apply(true);
+    tabs.forEach((t, i) => {
+      t.addEventListener('click', () => select(t.dataset.tab, true));
+      t.addEventListener('keydown', (e) => {
+        const d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+        if (!d) return;
+        const n = tabs[(i + d + tabs.length) % tabs.length]; n.focus(); select(n.dataset.tab, true);
+      });
     });
-    f.city.addEventListener('change', () => apply(false));
-    $('[data-clear]')?.addEventListener('click', () => { finder.reset(); f.guests.value = 2; apply(false); });
-
-    // restore the last search in this tab, or a city from the link
-    try {
-      const saved = JSON.parse(sessionStorage.getItem('nestique-search') || 'null');
-      if (saved) {
-        f.city.value = saved.city || 'all';
-        if (saved.ci >= today) { f.checkin.value = saved.ci; f.checkout.value = saved.co; }
-        if (saved.guests) f.guests.value = saved.guests;
-      }
-    } catch (_) {}
-    const m = location.hash.match(/^#stays-(\w+)/);
-    if (m && [...f.city.options].some((o) => o.value === m[1])) f.city.value = m[1];
-    apply(false);
+    const fromHash = () => {
+      const h = location.hash.replace('#', '').replace('stays-', '');
+      if (tabs.some((t) => t.dataset.tab === h)) select(h, false);
+    };
+    fromHash();
+    window.addEventListener('hashchange', fromHash);
   }
 
   // Stay page / contact: pre-fill dates and guests from the search
