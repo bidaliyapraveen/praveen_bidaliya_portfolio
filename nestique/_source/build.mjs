@@ -52,7 +52,7 @@ const faqs = [
   ['How do I book?', 'Send us a booking request from the stay\'s page, or email us with your dates and number of guests. We reply with the total price and availability, and confirm once payment is done.'],
   ['When do I pay?', 'After we confirm your dates. We share the total for your stay and the payment details by email.'],
   ['How does check-in work?', 'Before you arrive we send the exact address, directions and how to get the keys.'],
-  ['Can I book more than one home?', 'Yes. Cozy Tapovan and Tranquil are in the same building, and so are the two Doon Square flats, which works well for families and groups. Mention it in your request.'],
+  ['Can I book more than one home?', 'Yes. Several of our homes are close to each other, which works well for families and groups. Mention all the homes you want in your request.'],
   ['Are long stays possible?', 'Yes. Tell us your dates and we\'ll share a price for weekly or monthly stays.'],
   ['Can I cook?', 'Every home has a kitchen with cookware, so you can cook your own meals.'],
 ];
@@ -200,7 +200,7 @@ write('index.html', layout({
     <h2 id="results-title">All stays</h2>
     <p class="results-meta" aria-live="polite">${data.stays.length} homes</p>
   </div>
-  <ul class="cards">${data.stays.map(card).join('')}
+  <ul class="cards">${[...data.stays].sort((a, z) => (z.images.length > 0) - (a.images.length > 0)).map(card).join('')}
   </ul>
   <p class="empty" hidden>No stays match your search. <button type="button" class="link-btn" data-clear>Show all stays</button></p>
 </section>
@@ -286,14 +286,13 @@ data.stays.forEach((s) => {
       <h2>Where it is</h2>
       <p>${esc(s.area)}, ${esc(cityName(s.city))}. We send the exact address and directions once your booking is confirmed.</p>
       <p><a class="link" href="${map}" target="_blank" rel="noopener">Open the area in Google Maps</a></p>
-      ${s.checkin || s.rules ? `
       <h2>Things to know</h2>
       <div class="know">
-        ${s.checkin ? `<div><h3>Check-in and check-out</h3><p>Check-in ${esc(s.checkin.toLowerCase())}<br>Check-out ${esc(s.checkout.toLowerCase())}</p>${s.availability ? `<p>${s.availability.map(esc).join('<br>')}</p>` : ''}</div>` : ''}
-        ${s.rules ? `<div><h3>House rules</h3><ul>${s.rules.map(([r, n]) => `<li>${esc(r)}${n ? `<span>${esc(n)}</span>` : ''}</li>`).join('')}</ul></div>` : ''}
-        ${s.amenityGroups?.find(([g]) => g === 'Home safety') ? `<div><h3>Safety</h3><ul>${s.amenityGroups.find(([g]) => g === 'Home safety')[1].map((a) => `<li>${esc(a)}</li>`).join('')}</ul></div>` : ''}
+        <div><h3>Check-in and check-out</h3>${s.checkin ? `<p>Check-in ${esc(s.checkin.toLowerCase())}<br>Check-out ${esc(s.checkout.toLowerCase())}</p>` : '<p>Check-in and check-out times are shared with your booking confirmation.</p>'}${s.availability ? `<p>${s.availability.map(esc).join('<br>')}</p>` : ''}</div>
+        <div><h3>House rules</h3>${s.rules ? `<ul>${s.rules.map(([r, n]) => `<li>${esc(r)}${n ? `<span>${esc(n)}</span>` : ''}</li>`).join('')}</ul>` : '<p>We share the house rules before you book. Ask us anything in your request.</p>'}</div>
+        <div><h3>Safety</h3>${s.amenityGroups?.find(([g]) => g === 'Home safety') ? `<ul>${s.amenityGroups.find(([g]) => g === 'Home safety')[1].map((a) => `<li>${esc(a)}</li>`).join('')}</ul>` : '<p>Ask us about safety features in your request.</p>'}</div>
       </div>
-      ${(s.extraRules || []).map(([t, d]) => `<div class="notice"><h3>${esc(t)}</h3><p>${esc(d)}</p></div>`).join('')}` : ''}
+      ${(s.extraRules || []).map(([t, d]) => `<div class="notice"><h3>${esc(t)}</h3><p>${esc(d)}</p></div>`).join('')}
     </div>
 
     <aside class="book-box" id="book" aria-labelledby="book-title">

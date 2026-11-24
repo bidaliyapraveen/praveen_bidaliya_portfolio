@@ -46,27 +46,199 @@
       "images": []
     },
     {
-      "slug": "tranquil",
-      "name": "Tranquil",
+      "slug": "tapovan-tranquil",
+      "oldSlugs": [
+        "tranquil"
+      ],
+      "name": "Tapovan Tranquil",
+      "tagline": "Kitchen, free parking, AC and Wi-Fi",
       "city": "rishikesh",
-      "area": "Tapovan Vatika, Tapovan",
+      "area": "Deecon Valley, Tapovan",
       "unit": "C3",
       "type": "Apartment",
-      "summary": "A calm, light-filled flat in the same building as Cozy Tapovan.",
-      "description": "Tranquil is the quieter of our Tapovan homes, with clean lines, white linen and room to read or stretch. Book it alongside Cozy Tapovan when you're travelling with a bigger group.",
+      "summary": "A cozy, serene flat in the hills of Tapovan, close to the area's popular spots.",
+      "description": "Your family will be close to everything when you stay at this centrally located place. Welcome to Tapovan Tranquil by Nestique, a cozy and serene hideaway in the hills of Tapovan, near Deecon Valley Society. Designed for travellers who want comfort, calm and a touch of nature, this charming flat balances peaceful surroundings with easy access to Tapovan's popular spots.",
       "guests": null,
       "bedrooms": null,
       "beds": null,
       "baths": null,
       "price": null,
+      "highlights": [
+        [
+          "In Tapovan's hills",
+          "A short walk to Real Challenge Adventures, with Shri Sachcha Akhileshwar Mahadev Temple nearby."
+        ],
+        [
+          "Kitchen and free parking included",
+          "A kitchen and free parking at a cozy hill flat with AC and Wi-Fi."
+        ],
+        [
+          "Clean space and a welcoming host",
+          "Guests highlight the clean, comfortable space and a friendly, helpful host."
+        ]
+      ],
       "amenities": [
         "Wi-Fi",
-        "Full kitchen",
-        "Fresh linen and towels",
-        "Self check-in with key box"
+        "Air conditioning",
+        "Kitchen",
+        "Free parking",
+        "Dedicated workspace",
+        "Private balcony"
       ],
-      "mapQuery": "Tapovan Vatika, Tapovan, Rishikesh",
-      "images": []
+      "amenityGroups": [
+        [
+          "Scenic views",
+          [
+            "Mountain view"
+          ]
+        ],
+        [
+          "Bathroom",
+          [
+            "Bath",
+            "Hairdryer",
+            "Cleaning products",
+            "Shampoo",
+            "Body soap",
+            "Bidet",
+            "Hot water",
+            "Shower gel"
+          ]
+        ],
+        [
+          "Bedroom and laundry",
+          [
+            "Essentials: towels, bed sheets, soap and toilet paper",
+            "Hangers",
+            "Iron",
+            "Clothes storage"
+          ]
+        ],
+        [
+          "Entertainment",
+          [
+            "TV"
+          ]
+        ],
+        [
+          "Heating and cooling",
+          [
+            "Air conditioning"
+          ]
+        ],
+        [
+          "Home safety",
+          [
+            "Smoke alarm",
+            "Carbon monoxide alarm",
+            "Fire extinguisher",
+            "First aid kit"
+          ]
+        ],
+        [
+          "Internet and office",
+          [
+            "Wi-Fi",
+            "Dedicated workspace"
+          ]
+        ],
+        [
+          "Kitchen and dining",
+          [
+            "Kitchen where you can cook your own meals",
+            "Fridge"
+          ]
+        ],
+        [
+          "Outdoor",
+          [
+            "Patio or balcony",
+            "Outdoor dining area"
+          ]
+        ],
+        [
+          "Parking and facilities",
+          [
+            "Lift, at least 132 cm deep with an 81 cm doorway",
+            "Free parking on premises",
+            "Gated community"
+          ]
+        ],
+        [
+          "Services",
+          [
+            "Pets allowed (assistance animals always allowed)",
+            "Smoking allowed",
+            "Long-term stays of 28 days or more"
+          ]
+        ]
+      ],
+      "notIncluded": [
+        "Exterior security cameras on property",
+        "Washing machine",
+        "Tumble dryer",
+        "Heating"
+      ],
+      "mapQuery": "Deecon Valley, Tapovan, Rishikesh",
+      "images": [
+        "photos/tapovan-tranquil/bedroom.jpg",
+        "photos/tapovan-tranquil/living-room.jpg",
+        "photos/tapovan-tranquil/balcony-night.jpg",
+        "photos/tapovan-tranquil/kitchen.jpg",
+        "photos/tapovan-tranquil/bathroom.jpg",
+        "photos/tapovan-tranquil/living-candles.jpg",
+        "photos/tapovan-tranquil/sofa-corner.jpg",
+        "photos/tapovan-tranquil/tv-wall.jpg",
+        "photos/tapovan-tranquil/tv-wall-2.jpg",
+        "photos/tapovan-tranquil/art-wall.jpg",
+        "photos/tapovan-tranquil/bathroom-vanity.jpg",
+        "photos/tapovan-tranquil/bathroom-basin.jpg",
+        "photos/tapovan-tranquil/building-night.jpg",
+        "photos/tapovan-tranquil/society-gate.jpg",
+        "photos/tapovan-tranquil/ganga-sunset.jpg"
+      ],
+      "imageAlts": [
+        "Bedroom with a double bed, wall art and a door to the balcony",
+        "Living room with sofa, art wall, plants and warm cove lighting",
+        "Balcony at night with a lounge chair and string lights",
+        "Kitchen with wood cabinets, induction cooktop, kettle and chimney",
+        "Bathroom with marble tiles, lit mirror, water heater and shower area",
+        "Sofa and ottoman with candles in the living room",
+        "Sofa corner with cushions, plants and an easel",
+        "TV wall with air conditioning and a door to the living room",
+        "Sofa and TV unit with shelves",
+        "Gallery wall with framed prints and a wall clock",
+        "Bathroom shelf with candle and plant",
+        "Wash basin with backlit mirror and towel rail",
+        "The building at night",
+        "Entrance gate of Deecon Valley society",
+        "The Ganga at sunset in Rishikesh"
+      ],
+      "imageCats": [
+        "Bedroom",
+        "Living room",
+        "Balcony",
+        "Kitchen",
+        "Bathroom",
+        "Living room",
+        "Living room",
+        "Living room",
+        "Living room",
+        "Living room",
+        "Bathroom",
+        "Bathroom",
+        "Building and area",
+        "Building and area",
+        "Building and area"
+      ],
+      "photoCategories": [
+        "Bedroom",
+        "Living room",
+        "Kitchen",
+        "Bathroom",
+        "Balcony",
+        "Building and area"
+      ]
     },
     {
       "slug": "serenity",
