@@ -37,8 +37,13 @@ const mailto = (stay) => {
   return `mailto:${data.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 };
 
-const photo = (stay, i, cls = '') => {
-  const src = stay.images[i];
+const small = (src) => {
+  const sm = src.replace(/\.jpg$/, '-sm.jpg');
+  return fs.existsSync(path.join(root, sm)) ? sm : src;
+};
+const photo = (stay, i, cls = '', size = 'sm') => {
+  const src0 = stay.images[i];
+  const src = src0 && size === 'sm' ? small(src0) : src0;
   if (src) return `<img class="${cls}" src="/${esc(src)}" alt="${esc(stay.imageAlts?.[i] || `${stay.name}, photo ${i + 1}`)}" loading="${i === 0 ? 'eager' : 'lazy'}" decoding="async">`;
   return `<div class="ph ${cls}" role="img" aria-label="Photo of ${esc(stay.name)} coming soon"><span>${esc(stay.name.charAt(0))}</span></div>`;
 };
@@ -220,9 +225,9 @@ data.stays.forEach((s) => {
   const map = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(s.mapQuery)}`;
   const slots = Math.max(5, s.images.length);
   const galleryItems = [0, 1, 2, 3, 4].map((i) => `
-    <button type="button" class="g-item ${i === 0 ? 'g-main' : 'g-small'}" data-index="${i}" aria-label="Open photo ${i + 1} of ${esc(s.name)}"${s.images[i] ? '' : ' disabled'}>
-      ${photo(s, i)}
-      ${i === 4 && s.images.length > 5 ? `<span class="g-more">+${s.images.length - 5} ${s.images.length - 5 === 1 ? 'photo' : 'photos'}</span>` : ''}
+    <button type="button" class="g-item ${i === 0 ? 'g-main' : 'g-small'}${i === 4 && s.images.length > 5 ? ' g-tour' : ''}" data-index="${i}" ${i === 4 && s.images.length > 5 ? `data-open-tour aria-label="Show all ${s.images.length} photos of ${esc(s.name)}"` : `aria-label="Open photo ${i + 1} of ${esc(s.name)}"`}${s.images[i] ? '' : ' disabled'}>
+      ${photo(s, i, '', i === 0 ? 'full' : 'sm')}
+      ${i === 4 && s.images.length > 5 ? `<span class="g-more-overlay"><strong>+${s.images.length - 4}</strong>more photos</span>` : ''}
     </button>`).join('');
   const maxGuests = s.guests || 12;
 
@@ -252,8 +257,9 @@ data.stays.forEach((s) => {
     </div>
   </header>
 
-  <div class="gallery" data-images='${esc(JSON.stringify(s.images.map((i) => BASE + i)))}' data-name="${esc(s.name)}">
+  <div class="gallery" data-images='${esc(JSON.stringify(s.images.map((i) => BASE + i)))}' data-alts='${esc(JSON.stringify(s.imageAlts || []))}' data-cats='${esc(JSON.stringify(s.imageCats || []))}' data-name="${esc(s.name)}">
     ${galleryItems}
+    ${s.images.length > 5 ? `<button type="button" class="g-all" data-open-tour>Show all ${s.images.length} photos</button>` : ''}
   </div>
 
   <div class="stay-body">
@@ -328,6 +334,23 @@ data.stays.forEach((s) => {
     </ul>
   </section>
 </article>
+
+${s.images.length > 5 ? (() => {
+  const cats = s.photoCategories || [...new Set(s.imageCats || ['Photos'])];
+  const idx = s.images.map((_, i) => i);
+  const catOf = (i) => (s.imageCats ? s.imageCats[i] : 'Photos');
+  const slug = (c) => c.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+  return `<dialog class="tour" aria-labelledby="tour-title">
+  <div class="tour-bar">
+    <button type="button" class="tour-close" aria-label="Close photo gallery">Close</button>
+    <h2 id="tour-title">${esc(s.name)}: all ${s.images.length} photos</h2>
+  </div>
+  <nav class="tour-cats" aria-label="Photo categories">
+    ${cats.map((c) => { const first = idx.find((i) => catOf(i) === c); return first === undefined ? '' : `<a href="#tour-${slug(c)}" class="tour-cat"><img src="/${esc(small(s.images[first]))}" alt="" loading="lazy"><span>${esc(c)}</span></a>`; }).join('')}
+  </nav>
+  ${cats.map((c) => { const list = idx.filter((i) => catOf(i) === c); return list.length ? `<section class="tour-sec" id="tour-${slug(c)}"><h3>${esc(c)}<span>${list.length} ${list.length === 1 ? 'photo' : 'photos'}</span></h3><div class="tour-grid">${list.map((i) => `<button type="button" class="tour-item" data-index="${i}" aria-label="Open: ${esc(s.imageAlts?.[i] || `photo ${i + 1}`)}"><img src="/${esc(small(s.images[i]))}" alt="${esc(s.imageAlts?.[i] || '')}" loading="lazy"></button>`).join('')}</div></section>` : ''; }).join('')}
+</dialog>`;
+})() : ''}
 
 <dialog class="lightbox" aria-label="Photos of ${esc(s.name)}">
   <button type="button" class="lb-close" aria-label="Close photos">Close</button>

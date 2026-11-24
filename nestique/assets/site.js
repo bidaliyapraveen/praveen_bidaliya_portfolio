@@ -172,11 +172,14 @@
     } catch (_) { /* cancelled */ }
   }));
 
-  // Photo viewer
+  // Photo viewer + photo tour
   const gallery = $('.gallery[data-images]');
   const lb = $('dialog.lightbox');
+  const tour = $('dialog.tour');
   if (gallery && lb) {
     const images = JSON.parse(gallery.dataset.images || '[]');
+    const alts = JSON.parse(gallery.dataset.alts || '[]');
+    const cats = JSON.parse(gallery.dataset.cats || '[]');
     const name = gallery.dataset.name;
     const img = $('img', lb);
     const cap = $('figcaption', lb);
@@ -184,22 +187,32 @@
     const show = (n) => {
       i = (n + images.length) % images.length;
       img.src = images[i];
-      img.alt = `${name}, photo ${i + 1}`;
-      cap.textContent = `${i + 1} of ${images.length}`;
+      img.alt = alts[i] || `${name}, photo ${i + 1}`;
+      cap.textContent = `${cats[i] ? cats[i] + ', ' : ''}${i + 1} of ${images.length}`;
     };
-    $$('.g-item', gallery).forEach((b) => b.addEventListener('click', () => {
-      if (!images.length) return;
-      show(Number(b.dataset.index));
-      lb.showModal();
-    }));
+    const openPhoto = (n) => { if (!images.length) return; show(n); if (!lb.open) lb.showModal(); };
+    $$('.g-item:not([data-open-tour])', gallery).forEach((b) => b.addEventListener('click', () => openPhoto(Number(b.dataset.index))));
     $('.lb-close', lb).addEventListener('click', () => lb.close());
     $('.lb-prev', lb).addEventListener('click', () => show(i - 1));
     $('.lb-next', lb).addEventListener('click', () => show(i + 1));
-    lb.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowLeft') show(i - 1);
-      if (e.key === 'ArrowRight') show(i + 1);
-    });
+    lb.addEventListener('keydown', (e) => { if (e.key === 'ArrowLeft') show(i - 1); if (e.key === 'ArrowRight') show(i + 1); });
     lb.addEventListener('click', (e) => { if (e.target === lb) lb.close(); });
+    let sx = null;
+    lb.addEventListener('touchstart', (e) => { sx = e.touches[0].clientX; }, { passive: true });
+    lb.addEventListener('touchend', (e) => { if (sx === null) return; const dx = e.changedTouches[0].clientX - sx; if (Math.abs(dx) > 40) show(i + (dx < 0 ? 1 : -1)); sx = null; });
+
+    if (tour) {
+      $$('[data-open-tour]').forEach((b) => b.addEventListener('click', () => { tour.showModal(); tour.scrollTop = 0; }));
+      $('.tour-close', tour).addEventListener('click', () => tour.close());
+      $$('.tour-item', tour).forEach((b) => b.addEventListener('click', () => openPhoto(Number(b.dataset.index))));
+      $$('.tour-cat', tour).forEach((a) => a.addEventListener('click', (e) => {
+        e.preventDefault();
+        $(a.getAttribute('href'), tour)?.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+      }));
+      document.body.addEventListener('keydown', () => {});
+      tour.addEventListener('close', () => { document.documentElement.style.overflow = ''; });
+      tour.addEventListener('toggle', () => { document.documentElement.style.overflow = tour.open ? 'hidden' : ''; });
+    }
   }
 })();
 // Header "Request to book" jumps to the form on stay pages
