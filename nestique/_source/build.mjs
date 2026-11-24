@@ -1,3 +1,4 @@
+import crypto from 'node:crypto';
 // Builds the static Nestique site into ./dist from data/stays.json
 import fs from 'node:fs';
 import path from 'node:path';
@@ -14,6 +15,8 @@ fs.mkdirSync(dist, { recursive: true });
 fs.cpSync(path.join(root, 'assets'), path.join(dist, 'assets'), { recursive: true });
 if (fs.existsSync(path.join(root, 'photos'))) fs.cpSync(path.join(root, 'photos'), path.join(dist, 'photos'), { recursive: true });
 
+const ver = (f) => crypto.createHash('md5').update(fs.readFileSync(path.join(root, 'assets', f))).digest('hex').slice(0, 8);
+const V = { css: ver('site.css'), js: ver('site.js') };
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const city = (id) => data.cities.find((c) => c.id === id);
 const cityName = (id) => city(id)?.name ?? '';
@@ -83,9 +86,9 @@ ${image ? `<meta property="og:image" content="${SITE}/${esc(image)}">` : ''}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/site.css?v=${V.css}">
 ${jsonld ? `<script type="application/ld+json">${JSON.stringify(jsonld)}</script>` : ''}
-<script src="/assets/site.js" defer></script>
+<script src="/assets/site.js?v=${V.js}" defer></script>
 </head>
 <body class="p-${page}">
 <a class="skip" href="#main">Skip to content</a>
