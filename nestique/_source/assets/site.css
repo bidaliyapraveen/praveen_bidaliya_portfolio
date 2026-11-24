@@ -565,3 +565,14 @@ h1, h2, h3 { font-variation-settings: "opsz" 96, "wdth" 100; letter-spacing: -0.
 .sleep li { display: grid; gap: 4px; padding: 18px 20px; border: 1px solid var(--line); border-radius: 14px; background: var(--card); }
 .sleep strong { font-size: 17px; }
 .sleep span { color: var(--stone); font-size: 15px; }
+.chips { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.chips li { padding: 6px 14px; border-radius: 999px; background: var(--card); border: 1px solid var(--line); font-size: 15px; }
+.nearby { list-style: none; padding: 0; margin: 0 0 16px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 32px; }
+.nearby li { padding: 12px 0; border-bottom: 1px solid var(--line); display: grid; gap: 2px; }
+.nearby span { color: var(--stone); font-size: 15px; }
+@media (max-width: 640px) { .nearby { grid-template-columns: 1fr; } }
+.gallery.single { grid-template-columns: 1fr; grid-template-rows: auto; }
+.gallery.single .g-main { grid-row: auto; aspect-ratio: 21 / 9; }
+@media (max-width: 640px) { .gallery.single { grid-template-rows: auto; } .gallery.single .g-main { aspect-ratio: 4 / 3; grid-column: auto; } }
+.gallery.single .g-main { aspect-ratio: auto; height: min(52vw, 520px); }
+.gallery.single .g-main img { object-position: 60% 70%; }

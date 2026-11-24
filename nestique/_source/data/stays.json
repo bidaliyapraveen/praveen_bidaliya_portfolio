@@ -712,26 +712,201 @@
       "images": []
     },
     {
-      "slug": "doon-square-572",
-      "name": "Doon Square 572",
+      "slug": "the-doon-square-suites",
+      "oldSlugs": [
+        "doon-square-572"
+      ],
+      "name": "The Doon Square Suites",
+      "tagline": "Stay smart. Stay comfortable. Stay inspired.",
       "city": "dehradun",
-      "area": "Doon Square",
+      "area": "Doon Square, IT Park",
       "unit": "572",
-      "type": "Apartment",
-      "summary": "A bright flat at Doon Square with everything you need for a longer stay.",
-      "description": "A comfortable, practical flat at Doon Square for travellers who want a home base, whether you're here for a week or a month.",
+      "type": "1BHK studio",
+      "summary": "A thoughtfully designed private studio in IT Park, where modern comfort meets easy convenience.",
+      "description": "Whether you're visiting Dehradun for business, a weekend escape or on your way to Mussoorie, you'll find a peaceful, stylish space that feels like home. Every detail is chosen for a clean, cozy and premium stay, with high-speed Wi-Fi, elegant interiors and all the essentials for a relaxing visit. You have the entire private studio to yourself.",
+      "descriptionTitle": "What you'll love",
+      "descriptionList": [
+        "Private balcony with fresh air",
+        "Dedicated workspace",
+        "Fully equipped kitchen",
+        "Smart TV",
+        "High-speed Wi-Fi",
+        "Air-conditioned studio",
+        "Contactless self check-in with a lockbox",
+        "Professionally cleaned before every stay"
+      ],
+      "perfectFor": [
+        "Couples",
+        "Business travellers",
+        "Remote work and workcations",
+        "Weekend getaways",
+        "Solo travellers"
+      ],
+      "nearby": [
+        [
+          "Mussoorie",
+          "A scenic hill drive away"
+        ],
+        [
+          "Rajpur Road",
+          "Cafés, restaurants and shopping"
+        ],
+        [
+          "IT Park",
+          "Just minutes away"
+        ],
+        [
+          "Sahastradhara",
+          ""
+        ],
+        [
+          "Pacific Mall and Clock Tower",
+          ""
+        ]
+      ],
       "guests": null,
-      "bedrooms": null,
+      "bedrooms": 1,
       "beds": null,
       "baths": null,
       "price": null,
+      "highlights": [
+        [
+          "In Dehradun's IT Park area",
+          "Rajpur Road and local sights are a short drive away."
+        ],
+        [
+          "Private balcony",
+          "A little outdoor space right off the studio."
+        ],
+        [
+          "Responsive, welcoming host",
+          "Several guests praise the friendly, helpful replies and responsive support during their stay."
+        ]
+      ],
       "amenities": [
         "Wi-Fi",
-        "Full kitchen",
-        "Fresh linen and towels"
+        "Air conditioning",
+        "Kitchen",
+        "Dedicated workspace",
+        "Private balcony",
+        "Self check-in"
       ],
-      "mapQuery": "Doon Square, Dehradun",
-      "images": []
+      "amenityGroups": [
+        [
+          "Bathroom",
+          [
+            "Hairdryer",
+            "Cleaning products",
+            "Hot water"
+          ]
+        ],
+        [
+          "Bedroom and laundry",
+          [
+            "Hangers",
+            "Iron",
+            "Clothes storage: wardrobe"
+          ]
+        ],
+        [
+          "Entertainment",
+          [
+            "TV"
+          ]
+        ],
+        [
+          "Family",
+          [
+            "High chair"
+          ]
+        ],
+        [
+          "Heating and cooling",
+          [
+            "Air conditioning"
+          ]
+        ],
+        [
+          "Home safety",
+          [
+            "Exterior CCTV cameras in the building's common areas, for security only",
+            "Smoke alarm",
+            "Fire extinguisher",
+            "First aid kit"
+          ]
+        ],
+        [
+          "Internet and office",
+          [
+            "Wi-Fi",
+            "Dedicated workspace"
+          ]
+        ],
+        [
+          "Kitchen and dining",
+          [
+            "Kitchen where you can cook your own meals",
+            "Voltas refrigerator",
+            "Cooking basics: pots and pans, oil, salt and pepper",
+            "Crockery and cutlery",
+            "Mini fridge",
+            "Electric cooker",
+            "Kettle",
+            "Dining table",
+            "Coffee"
+          ]
+        ],
+        [
+          "Location features",
+          [
+            "Private entrance",
+            "Launderette nearby"
+          ]
+        ],
+        [
+          "Outdoor",
+          [
+            "Outdoor dining area"
+          ]
+        ],
+        [
+          "Parking and facilities",
+          [
+            "Lift, at least 132 cm deep with an 81 cm doorway",
+            "Paid parking on premises",
+            "Gated community"
+          ]
+        ],
+        [
+          "Services",
+          [
+            "Pets allowed (assistance animals always allowed)",
+            "Long-term stays of 28 days or more",
+            "Self check-in",
+            "Lockbox",
+            "Housekeeping available 3 hours a day, every day"
+          ]
+        ]
+      ],
+      "notIncluded": [
+        "Washing machine",
+        "Tumble dryer",
+        "Essentials",
+        "Carbon monoxide alarm"
+      ],
+      "mapQuery": "IT Park, Dehradun",
+      "images": [
+        "photos/the-doon-square-suites/living-corner.jpg"
+      ],
+      "imageAlts": [
+        "Living corner with green sofa, floor lamp, wood-slat wall and folk-art prints"
+      ],
+      "imageCats": [
+        "Living area"
+      ],
+      "photoCategories": [
+        "Living area"
+      ]
     },
     {
       "slug": "doon-vista-studio",

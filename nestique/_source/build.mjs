@@ -214,7 +214,7 @@ data.stays.forEach((s) => {
   const facts = [['Guests', val(s.guests)], ['Bedrooms', val(s.bedrooms)], ['Beds', val(s.beds)], ['Bathrooms', val(s.baths)]];
   const map = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(s.mapQuery)}`;
   const slots = Math.max(5, s.images.length);
-  const galleryItems = [0, 1, 2, 3, 4].map((i) => `
+  const galleryItems = (s.images.length > 0 && s.images.length < 5 ? [0] : [0, 1, 2, 3, 4]).map((i) => `
     <button type="button" class="g-item ${i === 0 ? 'g-main' : 'g-small'}${i === 4 && s.images.length > 5 ? ' g-tour' : ''}" data-index="${i}" ${i === 4 && s.images.length > 5 ? `data-open-tour aria-label="Show all ${s.images.length} photos of ${esc(s.name)}"` : `aria-label="Open photo ${i + 1} of ${esc(s.name)}"`}${s.images[i] ? '' : ' disabled'}>
       ${photo(s, i, '', i === 0 ? 'full' : 'sm')}
       ${i === 4 && s.images.length > 5 ? `<span class="g-more-overlay"><strong>+${s.images.length - 4}</strong>more photos</span>` : ''}
@@ -247,7 +247,7 @@ data.stays.forEach((s) => {
     </div>
   </header>
 
-  <div class="gallery" data-images='${esc(JSON.stringify(s.images.map((i) => BASE + i)))}' data-alts='${esc(JSON.stringify(s.imageAlts || []))}' data-cats='${esc(JSON.stringify(s.imageCats || []))}' data-name="${esc(s.name)}">
+  <div class="gallery${s.images.length > 0 && s.images.length < 5 ? ' single' : ''}" data-images='${esc(JSON.stringify(s.images.map((i) => BASE + i)))}' data-alts='${esc(JSON.stringify(s.imageAlts || []))}' data-cats='${esc(JSON.stringify(s.imageCats || []))}' data-name="${esc(s.name)}">
     ${galleryItems}
     ${s.images.length > 5 ? `<button type="button" class="g-all" data-open-tour>Show all ${s.images.length} photos</button>` : ''}
   </div>
@@ -263,6 +263,7 @@ data.stays.forEach((s) => {
       <h2>About this home</h2>
       <p>${esc(s.description)}</p>
       ${s.descriptionList ? `<h3 class="desc-h">${esc(s.descriptionTitle || 'Highlights')}</h3><ul class="desc-list">${s.descriptionList.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}
+      ${s.perfectFor ? `<h3 class="desc-h">Good for</h3><ul class="chips">${s.perfectFor.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}
       ${s.sleep ? `<h2>Where you'll sleep</h2><ul class="sleep">${s.sleep.map(([r, bd]) => `<li><strong>${esc(r)}</strong><span>${esc(bd)}</span></li>`).join('')}</ul>` : ''}
       <h2>What's included</h2>
       ${s.amenityGroups ? `
@@ -276,6 +277,7 @@ data.stays.forEach((s) => {
         </div>
       </dialog>` : `<ul class="amen">${s.amenities.map((a) => `<li>${esc(a)}</li>`).join('')}</ul>`}
       <h2>Where it is</h2>
+      ${s.nearby ? `<ul class="nearby">${s.nearby.map(([n, d]) => `<li><strong>${esc(n)}</strong>${d ? `<span>${esc(d)}</span>` : ''}</li>`).join('')}</ul>` : ''}
       <p>${esc(s.area)}, ${esc(cityName(s.city))}. We send the exact address and directions once your booking is confirmed.</p>
       <p><a class="link" href="${map}" target="_blank" rel="noopener">Open the area in Google Maps</a></p>
       <h2>Things to know</h2>
