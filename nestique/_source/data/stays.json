@@ -23,41 +23,13 @@
     {
       "slug": "cozy-tapovan",
       "name": "Cozy Tapovan",
-      "city": "rishikesh",
-      "area": "Tapovan Vatika, Tapovan",
-      "unit": "C2",
-      "type": "Apartment",
-      "summary": "A warm, plant-filled flat in Tapovan, close to the cafés and yoga schools.",
-      "description": "Cozy Tapovan is set up for slow mornings: soft light, plenty of plants, a kitchen you can actually cook in and a living room made for doing nothing. Tapovan's cafés and yoga schools are close by.",
-      "guests": null,
-      "bedrooms": null,
-      "beds": null,
-      "baths": null,
-      "price": null,
-      "amenities": [
-        "Wi-Fi",
-        "Full kitchen",
-        "Induction cooktop",
-        "Pressure cooker and cookware",
-        "Fresh linen and towels",
-        "Self check-in with key box"
-      ],
-      "mapQuery": "Tapovan Vatika, Tapovan, Rishikesh",
-      "images": []
-    },
-    {
-      "slug": "tapovan-tranquil",
-      "oldSlugs": [
-        "tranquil"
-      ],
-      "name": "Tapovan Tranquil",
       "tagline": "Kitchen, free parking, AC and Wi-Fi",
       "city": "rishikesh",
       "area": "Deecon Valley, Tapovan",
-      "unit": "C3",
+      "unit": "C2",
       "type": "Apartment",
       "summary": "A cozy, serene flat in the hills of Tapovan, close to the area's popular spots.",
-      "description": "Your family will be close to everything when you stay at this centrally located place. Welcome to Tapovan Tranquil by Nestique, a cozy and serene hideaway in the hills of Tapovan, near Deecon Valley Society. Designed for travellers who want comfort, calm and a touch of nature, this charming flat balances peaceful surroundings with easy access to Tapovan's popular spots.",
+      "description": "Your family will be close to everything when you stay at this centrally located place. Welcome to Cozy Tapovan by Nestique, a cozy and serene hideaway in the hills of Tapovan, near Deecon Valley Society. Designed for travellers who want comfort, calm and a touch of nature, this charming flat balances peaceful surroundings with easy access to Tapovan's popular spots.",
       "guests": null,
       "bedrooms": null,
       "beds": null,
@@ -181,21 +153,21 @@
       ],
       "mapQuery": "Deecon Valley, Tapovan, Rishikesh",
       "images": [
-        "photos/tapovan-tranquil/bedroom.jpg",
-        "photos/tapovan-tranquil/living-room.jpg",
-        "photos/tapovan-tranquil/balcony-night.jpg",
-        "photos/tapovan-tranquil/kitchen.jpg",
-        "photos/tapovan-tranquil/bathroom.jpg",
-        "photos/tapovan-tranquil/living-candles.jpg",
-        "photos/tapovan-tranquil/sofa-corner.jpg",
-        "photos/tapovan-tranquil/tv-wall.jpg",
-        "photos/tapovan-tranquil/tv-wall-2.jpg",
-        "photos/tapovan-tranquil/art-wall.jpg",
-        "photos/tapovan-tranquil/bathroom-vanity.jpg",
-        "photos/tapovan-tranquil/bathroom-basin.jpg",
-        "photos/tapovan-tranquil/building-night.jpg",
-        "photos/tapovan-tranquil/society-gate.jpg",
-        "photos/tapovan-tranquil/ganga-sunset.jpg"
+        "photos/cozy-tapovan/bedroom.jpg",
+        "photos/cozy-tapovan/living-room.jpg",
+        "photos/cozy-tapovan/balcony-night.jpg",
+        "photos/cozy-tapovan/kitchen.jpg",
+        "photos/cozy-tapovan/bathroom.jpg",
+        "photos/cozy-tapovan/living-candles.jpg",
+        "photos/cozy-tapovan/sofa-corner.jpg",
+        "photos/cozy-tapovan/tv-wall.jpg",
+        "photos/cozy-tapovan/tv-wall-2.jpg",
+        "photos/cozy-tapovan/art-wall.jpg",
+        "photos/cozy-tapovan/bathroom-vanity.jpg",
+        "photos/cozy-tapovan/bathroom-basin.jpg",
+        "photos/cozy-tapovan/building-night.jpg",
+        "photos/cozy-tapovan/society-gate.jpg",
+        "photos/cozy-tapovan/ganga-sunset.jpg"
       ],
       "imageAlts": [
         "Bedroom with a double bed, wall art and a door to the balcony",
@@ -238,6 +210,34 @@
         "Bathroom",
         "Balcony",
         "Building and area"
+      ]
+    },
+    {
+      "slug": "tapovan-tranquil",
+      "name": "Tapovan Tranquil",
+      "city": "rishikesh",
+      "area": "Tapovan Vatika, Tapovan",
+      "unit": "C3",
+      "type": "Apartment",
+      "summary": "A calm, light-filled flat in Tapovan, made for slow, quiet stays.",
+      "description": "Tapovan Tranquil is the quieter of our Tapovan homes, with clean lines, white linen and room to read or stretch. Book it alongside Cozy Tapovan when you're travelling with a bigger group.",
+      "guests": null,
+      "bedrooms": null,
+      "beds": null,
+      "baths": null,
+      "price": null,
+      "amenities": [
+        "Wi-Fi",
+        "Full kitchen",
+        "Induction cooktop",
+        "Pressure cooker and cookware",
+        "Fresh linen and towels",
+        "Self check-in with key box"
+      ],
+      "mapQuery": "Tapovan, Rishikesh",
+      "images": [],
+      "oldSlugs": [
+        "tranquil"
       ]
     },
     {
