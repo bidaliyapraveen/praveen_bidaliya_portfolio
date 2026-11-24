@@ -576,3 +576,14 @@ h1, h2, h3 { font-variation-settings: "opsz" 96, "wdth" 100; letter-spacing: -0.
 @media (max-width: 640px) { .gallery.single { grid-template-rows: auto; } .gallery.single .g-main { aspect-ratio: 4 / 3; grid-column: auto; } }
 .gallery.single .g-main { aspect-ratio: auto; height: min(52vw, 520px); }
 .gallery.single .g-main img { object-position: 60% 70%; }
+
+/* USP */
+.usp { max-width: var(--max); margin: clamp(64px, 8vw, 110px) auto 0; padding: 0 var(--pad); }
+.usp h2 { font-size: clamp(30px, 3.6vw, 46px); font-weight: 650; margin-bottom: 28px; }
+.usp-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 2vw, 28px); }
+.usp-list li { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 28px; }
+.usp-ic { width: 52px; height: 52px; border-radius: 14px; background: #fff3d6; display: grid; place-items: center; margin-bottom: 18px; }
+.usp-ic svg { width: 26px; height: 26px; fill: none; stroke: var(--river); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.usp-list h3 { font-size: 21px; font-weight: 650; margin-bottom: 8px; letter-spacing: -0.01em; }
+.usp-list p { color: var(--stone); font-size: 16px; }
+@media (max-width: 860px) { .usp-list { grid-template-columns: 1fr; } }

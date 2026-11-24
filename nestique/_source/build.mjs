@@ -195,6 +195,27 @@ write('index.html', layout({
   
 </section>
 
+<section class="usp" aria-labelledby="usp-title">
+  <h2 id="usp-title">Why stay with Nestique</h2>
+  <ul class="usp-list">
+    <li>
+      <span class="usp-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></svg></span>
+      <h3>Couple friendly</h3>
+      <p>Couples are welcome at every Nestique home. Book together, with privacy and no awkward questions.</p>
+    </li>
+    <li>
+      <span class="usp-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 4.2L18 9l-4.2 1.8L12 15l-1.8-4.2L6 9l4.2-1.8z"/><path d="M18.5 14.5l.8 1.7 1.7.8-1.7.8-.8 1.7-.8-1.7-1.7-.8 1.7-.8z"/></svg></span>
+      <h3>Clean and hygienic</h3>
+      <p>Every home is cleaned and maintained before each stay, with fresh linen and towels waiting for you.</p>
+    </li>
+    <li>
+      <span class="usp-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 9a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19.5" r="1"/></svg></span>
+      <h3>Wi-Fi in every home</h3>
+      <p>Wi-Fi in every stay, so you can stream, video-call or get a day's work done.</p>
+    </li>
+  </ul>
+</section>
+
 <section id="booking" class="booking" aria-labelledby="booking-title">
   <h2 id="booking-title">How to book</h2>
   <ol class="steps">
