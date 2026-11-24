@@ -1,0 +1,184 @@
+{
+  "brand": "Nestique",
+  "email": "thenestiquerishikesh@gmail.com",
+  "phone": "",
+  "cities": [
+    {
+      "id": "rishikesh",
+      "name": "Rishikesh",
+      "line": "Homes a short walk from the Ganga, in Tapovan and along the river road."
+    },
+    {
+      "id": "dehradun",
+      "name": "Dehradun",
+      "line": "Flats at Doon Square, for slower weeks in the valley."
+    },
+    {
+      "id": "gurgaon",
+      "name": "Gurgaon",
+      "line": "A city base for work trips and long stays."
+    }
+  ],
+  "stays": [
+    {
+      "slug": "cozy-tapovan",
+      "name": "Cozy Tapovan",
+      "city": "rishikesh",
+      "area": "Tapovan Vatika, Tapovan",
+      "unit": "C2",
+      "type": "Apartment",
+      "summary": "A warm, plant-filled flat in Tapovan, close to the cafés and yoga schools.",
+      "description": "Cozy Tapovan is set up for slow mornings: soft light, plenty of plants, a kitchen you can actually cook in and a living room made for doing nothing. Tapovan's cafés and yoga schools are close by.",
+      "guests": null,
+      "bedrooms": null,
+      "beds": null,
+      "baths": null,
+      "price": null,
+      "amenities": [
+        "Wi-Fi",
+        "Full kitchen",
+        "Induction cooktop",
+        "Pressure cooker and cookware",
+        "Fresh linen and towels",
+        "Self check-in with key box"
+      ],
+      "mapQuery": "Tapovan Vatika, Tapovan, Rishikesh",
+      "images": []
+    },
+    {
+      "slug": "tranquil",
+      "name": "Tranquil",
+      "city": "rishikesh",
+      "area": "Tapovan Vatika, Tapovan",
+      "unit": "C3",
+      "type": "Apartment",
+      "summary": "A calm, light-filled flat in the same building as Cozy Tapovan.",
+      "description": "Tranquil is the quieter of our Tapovan homes, with clean lines, white linen and room to read or stretch. Book it alongside Cozy Tapovan when you're travelling with a bigger group.",
+      "guests": null,
+      "bedrooms": null,
+      "beds": null,
+      "baths": null,
+      "price": null,
+      "amenities": [
+        "Wi-Fi",
+        "Full kitchen",
+        "Fresh linen and towels",
+        "Self check-in with key box"
+      ],
+      "mapQuery": "Tapovan Vatika, Tapovan, Rishikesh",
+      "images": []
+    },
+    {
+      "slug": "serenity",
+      "name": "Serenity",
+      "city": "rishikesh",
+      "area": "85 Ganges",
+      "unit": "C5",
+      "type": "Apartment",
+      "summary": "A quiet home at 85 Ganges, made for long, unhurried stays.",
+      "description": "Serenity is at 85 Ganges in Rishikesh. It has a full kitchen, comfortable beds and the quiet the name promises.",
+      "guests": null,
+      "bedrooms": null,
+      "beds": null,
+      "baths": null,
+      "price": null,
+      "amenities": [
+        "Wi-Fi",
+        "Full kitchen",
+        "Fresh linen and towels",
+        "Self check-in with key box"
+      ],
+      "mapQuery": "85 Ganges, Rishikesh",
+      "images": []
+    },
+    {
+      "slug": "rishikesh-3bhk",
+      "name": "The Rishikesh House",
+      "city": "rishikesh",
+      "area": "Rishikesh",
+      "unit": "3BHK",
+      "type": "3-bedroom home",
+      "summary": "Three bedrooms for families and groups who want to stay together.",
+      "description": "Our largest home in Rishikesh, with three bedrooms, a shared living space and a kitchen big enough for everyone to cook together. A good fit for families, retreats and friends travelling as a group.",
+      "guests": null,
+      "bedrooms": 3,
+      "beds": null,
+      "baths": null,
+      "price": null,
+      "amenities": [
+        "Wi-Fi",
+        "Full kitchen",
+        "Fresh linen and towels",
+        "Space for groups"
+      ],
+      "mapQuery": "Rishikesh",
+      "images": []
+    },
+    {
+      "slug": "doon-square-572",
+      "name": "Doon Square 572",
+      "city": "dehradun",
+      "area": "Doon Square",
+      "unit": "572",
+      "type": "Apartment",
+      "summary": "A bright flat at Doon Square with everything you need for a longer stay.",
+      "description": "A comfortable, practical flat at Doon Square for travellers who want a home base, whether you're here for a week or a month.",
+      "guests": null,
+      "bedrooms": null,
+      "beds": null,
+      "baths": null,
+      "price": null,
+      "amenities": [
+        "Wi-Fi",
+        "Full kitchen",
+        "Fresh linen and towels"
+      ],
+      "mapQuery": "Doon Square, Dehradun",
+      "images": []
+    },
+    {
+      "slug": "doon-square-531",
+      "name": "Doon Square 531",
+      "city": "dehradun",
+      "area": "Doon Square",
+      "unit": "531",
+      "type": "Apartment",
+      "summary": "Our second Doon Square flat, a few floors from 572.",
+      "description": "Set up like its neighbour 572, with a full kitchen and fresh linen. Book both when you're travelling with family or friends.",
+      "guests": null,
+      "bedrooms": null,
+      "beds": null,
+      "baths": null,
+      "price": null,
+      "amenities": [
+        "Wi-Fi",
+        "Full kitchen",
+        "Fresh linen and towels"
+      ],
+      "mapQuery": "Doon Square, Dehradun",
+      "images": []
+    },
+    {
+      "slug": "gurgaon-1bhk",
+      "name": "The Gurgaon Flat",
+      "city": "gurgaon",
+      "area": "Gurgaon",
+      "unit": "1BHK",
+      "type": "1-bedroom flat",
+      "summary": "A one-bedroom city flat for work trips and longer stays.",
+      "description": "A calm one-bedroom in Gurgaon with Wi-Fi and a kitchen, so a work trip feels less like a hotel stay.",
+      "guests": null,
+      "bedrooms": 1,
+      "beds": null,
+      "baths": null,
+      "price": null,
+      "amenities": [
+        "Wi-Fi",
+        "Full kitchen",
+        "Fresh linen and towels"
+      ],
+      "mapQuery": "Gurgaon",
+      "images": []
+    }
+  ]
+}
