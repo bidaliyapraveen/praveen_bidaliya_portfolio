@@ -398,3 +398,40 @@ h1, h2, h3 { font-variation-settings: "opsz" 96, "wdth" 100; letter-spacing: -0.
   .top .nav-links a { display: block; padding: 14px 0; border-bottom: 1px solid var(--moss); font-size: 18px; }
   .booking { border-radius: 18px; }
 }
+
+/* ===== v3: booking search bar ===== */
+.finder {
+  display: grid; grid-template-columns: 1.3fr 1fr 1fr .8fr auto; align-items: center;
+  max-width: 880px; margin: 36px auto 0; padding: 8px 8px 8px 0; text-align: left;
+  background: var(--card); border: 1px solid var(--line); border-radius: 999px;
+  box-shadow: 0 14px 36px -16px rgba(23, 58, 53, .3);
+}
+.f-field { display: grid; gap: 2px; padding: 6px 22px; border-right: 1px solid var(--line); min-width: 0; cursor: pointer; }
+.f-field:nth-child(4) { border-right: 0; }
+.f-field span { font-size: 13px; font-weight: 700; }
+.f-field input, .f-field select {
+  font: inherit; font-size: 15px; color: var(--stone); border: 0; background: transparent; padding: 2px 0; width: 100%; min-width: 0;
+  -webkit-appearance: none; appearance: none; cursor: pointer;
+}
+.f-field input:focus, .f-field select:focus { outline: none; color: var(--river); }
+.f-field:focus-within { background: #f1f4ef; border-radius: 999px; }
+.f-where select { background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235f6f68' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") right center / 16px no-repeat; padding-right: 20px; }
+.f-go {
+  display: inline-flex; align-items: center; gap: 8px; height: 56px; padding: 0 24px; border: 0; border-radius: 999px;
+  background: var(--river); color: #fff; font: inherit; font-weight: 650; font-size: 16px; cursor: pointer;
+}
+.f-go:hover { background: var(--jade); }
+.f-go svg { width: 20px; height: 20px; fill: none; stroke: #fff; stroke-width: 2.2; stroke-linecap: round; }
+.finder-error { margin: 12px auto 0; color: #b4412f; font-weight: 600; font-size: 15px; max-width: none; }
+.finder-error:empty { display: none; }
+
+.results-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; margin-bottom: 24px; }
+.results-head h2 { font-size: clamp(26px, 3vw, 36px); font-weight: 650; }
+.results-meta { color: var(--stone); font-size: 16px; max-width: none; }
+
+@media (max-width: 860px) {
+  .finder { grid-template-columns: 1fr 1fr; border-radius: 20px; padding: 8px; gap: 4px; }
+  .f-field { border-right: 0; border-radius: 12px; padding: 10px 14px; background: #f5f6f3; }
+  .f-where, .f-guests { grid-column: 1 / -1; }
+  .f-go { grid-column: 1 / -1; justify-content: center; height: 52px; }
+}

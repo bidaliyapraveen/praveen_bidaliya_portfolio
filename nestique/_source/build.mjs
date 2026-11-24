@@ -131,8 +131,8 @@ const icon = {
 };
 
 const card = (s) => `
-    <li class="card" data-city="${s.city}" data-search="${esc([s.name, s.area, cityName(s.city), s.type].join(' ').toLowerCase())}">
-      <a href="/stays/${s.slug}/">
+    <li class="card" data-city="${s.city}" data-guests="${s.guests || ""}" data-search="${esc([s.name, s.area, cityName(s.city), s.type].join(' ').toLowerCase())}">
+      <a href="/stays/${s.slug}/" data-base="/stays/${s.slug}/">
         <div class="card-img">
           ${photo(s, 0)}
           <span class="card-tag">${esc(cityName(s.city))}</span>
@@ -169,24 +169,31 @@ write('index.html', layout({
   jsonld: { '@context': 'https://schema.org', '@type': 'Organization', name: 'Nestique', url: SITE, email: data.email },
   body: `
 <section class="hero hero-center">
-  <p class="pill">${data.stays.length} homes in ${cityList}</p>
   <h1>Stay like you live here.<br><span>Homes by the Ganga and the hills.</span></h1>
   <p class="hero-sub">Calm, fully equipped homes in Rishikesh, Dehradun and Gurgaon. Pick a stay, send your dates and book directly with us.</p>
-  <form class="search" role="search" onsubmit="return false">
-    <label class="sr" for="q">Search stays</label>
-    <input id="q" type="search" placeholder="Search by stay, area or city" autocomplete="off">
-    <span class="search-icon">${icon.search}</span>
+  <form class="finder" id="finder" action="#stays" novalidate>
+    <label class="f-field f-where"><span>Where</span>
+      <select name="city">
+        <option value="all">All cities</option>
+        ${data.cities.map((c) => `<option value="${c.id}">${esc(c.name)}</option>`).join('')}
+      </select>
+    </label>
+    <label class="f-field"><span>Check-in</span><input type="date" name="checkin"></label>
+    <label class="f-field"><span>Check-out</span><input type="date" name="checkout"></label>
+    <label class="f-field f-guests"><span>Guests</span><input type="number" name="guests" min="1" max="20" value="2" inputmode="numeric"></label>
+    <button class="f-go" type="submit">${icon.search}<span>Search</span></button>
   </form>
-  <div class="filter" role="group" aria-label="Show stays in">
-    <button type="button" data-filter="all" aria-pressed="true">All</button>
-    ${data.cities.map((c) => `<button type="button" data-filter="${c.id}" aria-pressed="false">${esc(c.name)}</button>`).join('')}
-  </div>
+  <p class="finder-error" role="alert"></p>
 </section>
 
-<section id="stays" class="stays" aria-label="Stays">
+<section id="stays" class="stays" aria-labelledby="results-title">
+  <div class="results-head">
+    <h2 id="results-title">All stays</h2>
+    <p class="results-meta" aria-live="polite">${data.stays.length} homes</p>
+  </div>
   <ul class="cards">${data.stays.map(card).join('')}
   </ul>
-  <p class="empty" hidden>No stays match that search. <button type="button" class="link-btn" data-clear>Show all stays</button></p>
+  <p class="empty" hidden>No stays match your search. <button type="button" class="link-btn" data-clear>Show all stays</button></p>
 </section>
 
 <section id="booking" class="booking" aria-labelledby="booking-title">

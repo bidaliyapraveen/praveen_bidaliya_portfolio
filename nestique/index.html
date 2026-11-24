@@ -40,24 +40,31 @@
 <main id="main">
 
 <section class="hero hero-center">
-  <p class="pill">7 homes in Rishikesh, Dehradun and Gurgaon</p>
   <h1>Stay like you live here.<br><span>Homes by the Ganga and the hills.</span></h1>
   <p class="hero-sub">Calm, fully equipped homes in Rishikesh, Dehradun and Gurgaon. Pick a stay, send your dates and book directly with us.</p>
-  <form class="search" role="search" onsubmit="return false">
-    <label class="sr" for="q">Search stays</label>
-    <input id="q" type="search" placeholder="Search by stay, area or city" autocomplete="off">
-    <span class="search-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>
+  <form class="finder" id="finder" action="#stays" novalidate>
+    <label class="f-field f-where"><span>Where</span>
+      <select name="city">
+        <option value="all">All cities</option>
+        <option value="rishikesh">Rishikesh</option><option value="dehradun">Dehradun</option><option value="gurgaon">Gurgaon</option>
+      </select>
+    </label>
+    <label class="f-field"><span>Check-in</span><input type="date" name="checkin"></label>
+    <label class="f-field"><span>Check-out</span><input type="date" name="checkout"></label>
+    <label class="f-field f-guests"><span>Guests</span><input type="number" name="guests" min="1" max="20" value="2" inputmode="numeric"></label>
+    <button class="f-go" type="submit"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search</span></button>
   </form>
-  <div class="filter" role="group" aria-label="Show stays in">
-    <button type="button" data-filter="all" aria-pressed="true">All</button>
-    <button type="button" data-filter="rishikesh" aria-pressed="false">Rishikesh</button><button type="button" data-filter="dehradun" aria-pressed="false">Dehradun</button><button type="button" data-filter="gurgaon" aria-pressed="false">Gurgaon</button>
-  </div>
+  <p class="finder-error" role="alert"></p>
 </section>
 
-<section id="stays" class="stays" aria-label="Stays">
+<section id="stays" class="stays" aria-labelledby="results-title">
+  <div class="results-head">
+    <h2 id="results-title">All stays</h2>
+    <p class="results-meta" aria-live="polite">7 homes</p>
+  </div>
   <ul class="cards">
-    <li class="card" data-city="rishikesh" data-search="cozy tapovan tapovan vatika, tapovan rishikesh apartment">
-      <a href="/nestique/stays/cozy-tapovan/">
+    <li class="card" data-city="rishikesh" data-guests="" data-search="cozy tapovan tapovan vatika, tapovan rishikesh apartment">
+      <a href="/nestique/stays/cozy-tapovan/" data-base="/stays/cozy-tapovan/">
         <div class="card-img">
           <div class="ph " role="img" aria-label="Photo of Cozy Tapovan coming soon"><span>C</span></div>
           <span class="card-tag">Rishikesh</span>
@@ -77,8 +84,8 @@
         </div>
       </a>
     </li>
-    <li class="card" data-city="rishikesh" data-search="tranquil tapovan vatika, tapovan rishikesh apartment">
-      <a href="/nestique/stays/tranquil/">
+    <li class="card" data-city="rishikesh" data-guests="" data-search="tranquil tapovan vatika, tapovan rishikesh apartment">
+      <a href="/nestique/stays/tranquil/" data-base="/stays/tranquil/">
         <div class="card-img">
           <div class="ph " role="img" aria-label="Photo of Tranquil coming soon"><span>T</span></div>
           <span class="card-tag">Rishikesh</span>
@@ -98,8 +105,8 @@
         </div>
       </a>
     </li>
-    <li class="card" data-city="rishikesh" data-search="serenity 85 ganges rishikesh apartment">
-      <a href="/nestique/stays/serenity/">
+    <li class="card" data-city="rishikesh" data-guests="" data-search="serenity 85 ganges rishikesh apartment">
+      <a href="/nestique/stays/serenity/" data-base="/stays/serenity/">
         <div class="card-img">
           <div class="ph " role="img" aria-label="Photo of Serenity coming soon"><span>S</span></div>
           <span class="card-tag">Rishikesh</span>
@@ -119,8 +126,8 @@
         </div>
       </a>
     </li>
-    <li class="card" data-city="rishikesh" data-search="the rishikesh house rishikesh rishikesh 3-bedroom home">
-      <a href="/nestique/stays/rishikesh-3bhk/">
+    <li class="card" data-city="rishikesh" data-guests="" data-search="the rishikesh house rishikesh rishikesh 3-bedroom home">
+      <a href="/nestique/stays/rishikesh-3bhk/" data-base="/stays/rishikesh-3bhk/">
         <div class="card-img">
           <div class="ph " role="img" aria-label="Photo of The Rishikesh House coming soon"><span>T</span></div>
           <span class="card-tag">Rishikesh</span>
@@ -140,8 +147,8 @@
         </div>
       </a>
     </li>
-    <li class="card" data-city="dehradun" data-search="doon square 572 doon square dehradun apartment">
-      <a href="/nestique/stays/doon-square-572/">
+    <li class="card" data-city="dehradun" data-guests="" data-search="doon square 572 doon square dehradun apartment">
+      <a href="/nestique/stays/doon-square-572/" data-base="/stays/doon-square-572/">
         <div class="card-img">
           <div class="ph " role="img" aria-label="Photo of Doon Square 572 coming soon"><span>D</span></div>
           <span class="card-tag">Dehradun</span>
@@ -161,8 +168,8 @@
         </div>
       </a>
     </li>
-    <li class="card" data-city="dehradun" data-search="doon square 531 doon square dehradun apartment">
-      <a href="/nestique/stays/doon-square-531/">
+    <li class="card" data-city="dehradun" data-guests="" data-search="doon square 531 doon square dehradun apartment">
+      <a href="/nestique/stays/doon-square-531/" data-base="/stays/doon-square-531/">
         <div class="card-img">
           <div class="ph " role="img" aria-label="Photo of Doon Square 531 coming soon"><span>D</span></div>
           <span class="card-tag">Dehradun</span>
@@ -182,8 +189,8 @@
         </div>
       </a>
     </li>
-    <li class="card" data-city="gurgaon" data-search="the gurgaon flat gurgaon gurgaon 1-bedroom flat">
-      <a href="/nestique/stays/gurgaon-1bhk/">
+    <li class="card" data-city="gurgaon" data-guests="" data-search="the gurgaon flat gurgaon gurgaon 1-bedroom flat">
+      <a href="/nestique/stays/gurgaon-1bhk/" data-base="/stays/gurgaon-1bhk/">
         <div class="card-img">
           <div class="ph " role="img" aria-label="Photo of The Gurgaon Flat coming soon"><span>T</span></div>
           <span class="card-tag">Gurgaon</span>
@@ -204,7 +211,7 @@
       </a>
     </li>
   </ul>
-  <p class="empty" hidden>No stays match that search. <button type="button" class="link-btn" data-clear>Show all stays</button></p>
+  <p class="empty" hidden>No stays match your search. <button type="button" class="link-btn" data-clear>Show all stays</button></p>
 </section>
 
 <section id="booking" class="booking" aria-labelledby="booking-title">
