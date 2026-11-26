@@ -1365,11 +1365,11 @@
       "city": "pauri-garhwal",
       "area": "Santudhar, near Satpuli",
       "unit": "Villa",
-      "type": "Villa",
+      "type": "3BHK villa",
       "summary": "A peaceful villa in the Pauri Garhwal hills, with breakfast included and room for the whole family.",
       "description": "Relax with the whole family at this peaceful place to stay in the Garhwal hills, close to the villages of Santudhar, Satpuli, Kirkhu and Patisain. Evenings are for the fire pit and the outdoor dining area, and breakfast is included, with a kitchen for your own meals too.",
       "guests": "3–4 per room",
-      "bedrooms": null,
+      "bedrooms": 3,
       "beds": null,
       "baths": null,
       "price": null,
@@ -1546,7 +1546,8 @@
         "Living room",
         "Bedrooms",
         "Food"
-      ]
+      ],
+      "mapUrl": "https://share.google/VKnraqWpkBVXUPMrX"
     },
     {
       "slug": "the-amelie-villa",
