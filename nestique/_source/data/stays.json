@@ -26,13 +26,13 @@
       "city": "rishikesh",
       "area": "Tapovan Vatika, Tapovan",
       "unit": "C2",
-      "type": "Apartment",
+      "type": "1BHK apartment",
       "summary": "A warm, plant-filled flat in Tapovan with a curtained living nook, a reading corner and a lit-up balcony.",
       "description": "Cozy Tapovan is set up for slow mornings: soft light, plenty of plants, a kitchen you can actually cook in and a living room made for doing nothing. There's a canopy reading nook, a bedroom with full-length windows and a balcony strung with fairy lights for the evenings. Tapovan's cafés and yoga schools are close by.",
       "guests": null,
-      "bedrooms": null,
+      "bedrooms": 1,
       "beds": null,
-      "baths": null,
+      "baths": 1,
       "price": null,
       "amenities": [
         "Wi-Fi",
@@ -223,7 +223,8 @@
         "Bathroom",
         "Balcony",
         "Building and area"
-      ]
+      ],
+      "livingRooms": 1
     },
     {
       "slug": "tapovan-tranquil",
@@ -232,13 +233,13 @@
       "city": "rishikesh",
       "area": "Deecon Valley, Tapovan",
       "unit": "C3",
-      "type": "Apartment",
+      "type": "1BHK apartment",
       "summary": "A cozy, serene flat in the hills of Tapovan, close to the area's popular spots.",
       "description": "Your family will be close to everything when you stay at this centrally located place. Welcome to Tapovan Tranquil by Nestique, a cozy and serene hideaway in the hills of Tapovan, near Deecon Valley Society. Designed for travellers who want comfort, calm and a touch of nature, this charming flat balances peaceful surroundings with easy access to Tapovan's popular spots.",
       "guests": null,
-      "bedrooms": null,
+      "bedrooms": 1,
       "beds": null,
-      "baths": null,
+      "baths": 1,
       "price": null,
       "highlights": [
         [
@@ -418,7 +419,8 @@
       ],
       "oldSlugs": [
         "tranquil"
-      ]
+      ],
+      "livingRooms": 1
     },
     {
       "slug": "the-spacious",
@@ -430,7 +432,7 @@
       "city": "rishikesh",
       "area": "35 The Ganges",
       "unit": "C5",
-      "type": "2-bedroom apartment",
+      "type": "2BHK apartment",
       "summary": "A 2BHK with mountain views from the balcony, close to local cafés, shops and the Ganga.",
       "description": "Our 2BHK apartment offers beautiful mountain views right from the balcony, creating the perfect setting for a relaxing getaway.",
       "descriptionTitle": "What makes it a good place to stay",
@@ -456,7 +458,7 @@
       "guests": null,
       "bedrooms": 2,
       "beds": 2,
-      "baths": null,
+      "baths": 2,
       "price": null,
       "rating": {
         "score": 4.69,
@@ -689,24 +691,96 @@
       ]
     },
     {
-      "slug": "rishikesh-3bhk",
-      "name": "The Rishikesh House",
+      "slug": "the-ganga-serenity",
+      "oldSlugs": [
+        "rishikesh-3bhk"
+      ],
+      "name": "The Ganga Serenity",
+      "tagline": "Balcony views, Wi-Fi and AC, near the Ganga",
       "city": "rishikesh",
       "area": "Rishikesh",
-      "unit": "3BHK",
-      "type": "3-bedroom home",
-      "summary": "Three bedrooms for families and groups who want to stay together.",
-      "description": "Our largest home in Rishikesh, with three bedrooms, a shared living space and a kitchen big enough for everyone to cook together. A good fit for families, retreats and friends travelling as a group.",
+      "unit": "1BHK",
+      "type": "1BHK apartment",
+      "summary": "A 1BHK with beautiful views from the balcony, close to local cafés, shops and the Ganga.",
+      "description": "Our 1BHK apartment offers beautiful views right from the balcony, creating the perfect setting for a relaxing getaway.",
+      "descriptionTitle": "What makes it a good place to stay",
+      "descriptionList": [
+        "A comfortable bedroom with a cozy bed",
+        "A spacious living area to relax and unwind",
+        "High-speed Wi-Fi, good for work or streaming",
+        "Air-conditioned rooms for warm days",
+        "Close to local cafés, shops and the Ganga",
+        "A safe, quiet and serene neighbourhood",
+        "Two Ganga ghats nearby"
+      ],
       "guests": null,
-      "bedrooms": 3,
+      "bedrooms": 1,
       "beds": null,
-      "baths": null,
+      "baths": 1,
+      "livingRooms": 1,
       "price": null,
       "amenities": [
         "Wi-Fi",
-        "Full kitchen",
-        "Fresh linen and towels",
-        "Space for groups"
+        "Air conditioning",
+        "Kitchen",
+        "TV"
+      ],
+      "amenityGroups": [
+        [
+          "Bathroom",
+          [
+            "Hairdryer",
+            "Shampoo",
+            "Hot water"
+          ]
+        ],
+        [
+          "Bedroom and laundry",
+          [
+            "Essentials: towels, bed sheets, soap and toilet paper",
+            "Hangers",
+            "Iron"
+          ]
+        ],
+        [
+          "Entertainment",
+          [
+            "TV"
+          ]
+        ],
+        [
+          "Heating and cooling",
+          [
+            "Air conditioning"
+          ]
+        ],
+        [
+          "Home safety",
+          [
+            "CCTV cameras in the building's common areas and entrance only. There are no cameras inside the apartment or in any private guest area."
+          ]
+        ],
+        [
+          "Internet and office",
+          [
+            "Wi-Fi"
+          ]
+        ],
+        [
+          "Kitchen and dining",
+          [
+            "Kitchen where you can cook your own meals",
+            "Fridge",
+            "Cooking basics: pots and pans, oil, salt and pepper"
+          ]
+        ]
+      ],
+      "notIncluded": [
+        "Washing machine",
+        "Tumble dryer",
+        "Smoke alarm",
+        "Carbon monoxide alarm",
+        "Heating"
       ],
       "mapQuery": "Rishikesh",
       "images": []
@@ -721,7 +795,7 @@
       "city": "dehradun",
       "area": "Doon Square, IT Park",
       "unit": "572",
-      "type": "1BHK studio",
+      "type": "Studio apartment",
       "summary": "A thoughtfully designed private studio in IT Park, where modern comfort meets easy convenience.",
       "description": "Whether you're visiting Dehradun for business, a weekend escape or on your way to Mussoorie, you'll find a peaceful, stylish space that feels like home. Every detail is chosen for a clean, cozy and premium stay, with high-speed Wi-Fi, elegant interiors and all the essentials for a relaxing visit. You have the entire private studio to yourself.",
       "descriptionTitle": "What you'll love",
@@ -767,7 +841,7 @@
       "guests": null,
       "bedrooms": 1,
       "beds": null,
-      "baths": null,
+      "baths": 1,
       "price": null,
       "highlights": [
         [
@@ -1220,13 +1294,13 @@
       "city": "gurgaon",
       "area": "Gurgaon",
       "unit": "1BHK",
-      "type": "1-bedroom flat",
+      "type": "1BHK apartment",
       "summary": "A one-bedroom city flat for work trips and longer stays.",
       "description": "A calm one-bedroom in Gurgaon with Wi-Fi and a kitchen, so a work trip feels less like a hotel stay.",
       "guests": null,
       "bedrooms": 1,
       "beds": null,
-      "baths": null,
+      "baths": 1,
       "price": null,
       "amenities": [
         "Wi-Fi",
@@ -1234,7 +1308,8 @@
         "Fresh linen and towels"
       ],
       "mapQuery": "Gurgaon",
-      "images": []
+      "images": [],
+      "livingRooms": 1
     }
   ]
 }

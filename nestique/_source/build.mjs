@@ -154,9 +154,9 @@ const card = (s) => `
           <p class="card-loc">${icon.pin}${esc(s.area)}${s.area === cityName(s.city) ? '' : `, ${esc(cityName(s.city))}`}</p>
           <ul class="card-facts">
             <li>${icon.home}${esc(s.type)}</li>
-            ${s.bedrooms && !/bedroom/i.test(s.type) ? `<li>${icon.bed}${s.bedrooms} ${s.bedrooms === 1 ? 'bedroom' : 'bedrooms'}</li>` : ''}
+            ${s.baths ? `<li>${icon.bed}${s.baths} ${s.baths === 1 ? 'bathroom' : 'bathrooms'}</li>` : ''}
             ${s.guests ? `<li>${icon.users}Up to ${s.guests} guests</li>` : ''}
-            ${s.amenities.includes('Full kitchen') ? `<li>${icon.pot}Full kitchen</li>` : ''}
+            ${s.amenities.some((a) => /kitchen/i.test(a)) ? `<li>${icon.pot}Full kitchen</li>` : ''}
           </ul>
         </div>
       </a>
@@ -232,7 +232,7 @@ ${faqHtml}`,
 data.stays.forEach((s) => {
   const others = data.stays.filter((o) => o.slug !== s.slug && o.city === s.city)
     .concat(data.stays.filter((o) => o.city !== s.city)).slice(0, 3);
-  const facts = [['Guests', val(s.guests)], ['Bedrooms', val(s.bedrooms)], ['Beds', val(s.beds)], ['Bathrooms', val(s.baths)]];
+  const facts = [['Layout', s.type.replace(' apartment', '')], ...(s.type.startsWith('Studio') ? [] : [['Bedrooms', val(s.bedrooms)]]), ...(s.livingRooms ? [['Living room', s.livingRooms]] : []), ['Bathrooms', val(s.baths)], ['Guests', val(s.guests)]].slice(0, 4);
   const map = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(s.mapQuery)}`;
   const slots = Math.max(5, s.images.length);
   const galleryItems = (s.images.length > 0 && s.images.length < 5 ? [0] : [0, 1, 2, 3, 4]).map((i) => `
@@ -263,7 +263,7 @@ data.stays.forEach((s) => {
     <h1>${esc(s.name)}</h1>
     ${s.tagline ? `<p class="tagline">${esc(s.tagline)}</p>` : ''}
     <div class="stay-sub">
-      <p class="stay-where">${esc(s.type)} in ${esc(s.area)}, ${esc(cityName(s.city))}${s.rating ? ` <a class="rate-link" href="#reviews"><span class="star" aria-hidden="true">★</span> ${s.rating.score.toFixed(2)}</a>` : ''}</p>
+      <p class="stay-where">${esc(s.type)} in ${s.area === cityName(s.city) ? '' : `${esc(s.area)}, `}${esc(cityName(s.city))}${s.rating ? ` <a class="rate-link" href="#reviews"><span class="star" aria-hidden="true">★</span> ${s.rating.score.toFixed(2)}</a>` : ''}</p>
       <button type="button" class="share" data-share>Share this stay</button>
     </div>
   </header>
@@ -299,7 +299,7 @@ data.stays.forEach((s) => {
       </dialog>` : `<ul class="amen">${s.amenities.map((a) => `<li>${esc(a)}</li>`).join('')}</ul>`}
       <h2>Where it is</h2>
       ${s.nearby ? `<ul class="nearby">${s.nearby.map(([n, d]) => `<li><strong>${esc(n)}</strong>${d ? `<span>${esc(d)}</span>` : ''}</li>`).join('')}</ul>` : ''}
-      <p>${esc(s.area)}, ${esc(cityName(s.city))}. We send the exact address and directions once your booking is confirmed.</p>
+      <p>${s.area === cityName(s.city) ? '' : `${esc(s.area)}, `}${esc(cityName(s.city))}. We send the exact address and directions once your booking is confirmed.</p>
       <p><a class="link" href="${map}" target="_blank" rel="noopener">Open the area in Google Maps</a></p>
       <h2>Things to know</h2>
       <div class="know">
