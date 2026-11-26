@@ -19,7 +19,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/nestique/assets/site.css?v=8f5300ab">
 
-<script src="/nestique/assets/site.js?v=d58d1c8e" defer></script>
+<script src="/nestique/assets/site.js?v=f54b2060" defer></script>
 </head>
 <body class="p-contact">
 <a class="skip" href="#main">Skip to content</a>
@@ -52,7 +52,7 @@
         <input type="hidden" name="_next" value="https://praveenbidaliya.com/nestique/thank-you/">
     <label><span class="lt">Your name</span><input type="text" name="name" autocomplete="name" required></label>
     <label><span class="lt">Email</span><input type="email" name="email" autocomplete="email" required></label>
-    <label><span class="lt">Phone <span class="opt">(optional)</span></span><input type="tel" name="phone" autocomplete="tel" inputmode="tel"></label>
+    <label><span class="lt">Phone</span><input type="tel" name="phone" autocomplete="tel" inputmode="tel" required minlength="10" pattern="[+0-9 ()-]{10,}"></label>
     <label><span class="lt">Which home?</span>
       <select name="stay">
         <option value="Not sure yet">Not sure yet, help me choose</option>
@@ -67,7 +67,7 @@
     <label><span class="lt">Guests <span class="opt">(optional)</span></span><input type="number" name="guests" min="1" max="30" inputmode="numeric"></label>
     <label><span class="lt">Your message</span><textarea name="message" rows="5" required></textarea></label>
     <p class="form-error" role="alert"></p>
-    <button class="btn btn-full" type="submit">Send message</button>
+    <button class="btn btn-full" type="submit">Send request</button>
   </form>
 </section>
 </main>

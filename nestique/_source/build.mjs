@@ -224,7 +224,7 @@ write('index.html', layout({
     <li><h3>We confirm price and availability</h3><p>You'll hear back from us with the total for your dates and how to pay.</p></li>
     <li><h3>Get your check-in details</h3><p>Before you arrive we send the address, directions and self check-in instructions.</p></li>
   </ol>
-  <p class="book-cta"><a class="btn btn-big" href="/contact/">Send a booking request</a></p>
+  <p class="book-cta"><a class="btn btn-big" href="/contact/">Send request</a></p>
 </section>
 ${faqHtml}`,
 }));
@@ -328,11 +328,11 @@ data.stays.forEach((s) => {
         <label>Your name<input type="text" name="name" autocomplete="name" required></label>
         <div class="pair">
         <label>Email<input type="email" name="email" autocomplete="email" required></label>
-        <label>Phone <span class="opt">(optional)</span><input type="tel" name="phone" autocomplete="tel" inputmode="tel"></label>
+        <label>Phone<input type="tel" name="phone" autocomplete="tel" inputmode="tel" required minlength="10" pattern="[+0-9 ()-]{10,}"></label>
         </div>
         <label>Anything we should know? <span class="opt">(optional)</span><textarea name="message" rows="2"></textarea></label>
         <p class="form-error" role="alert"></p>
-        <button class="btn btn-full" type="submit">Send booking request</button>
+        <button class="btn btn-full" type="submit">Send request</button>
         <button class="link-btn step-back" type="button">Change dates or guests</button>
         </div>
         <p class="small">You won't be charged yet. We reply with the total and availability, usually within a day.</p>
@@ -410,7 +410,7 @@ write('contact/index.html', layout({
     ${honeypot}
     <label>Your name<input type="text" name="name" autocomplete="name" required></label>
     <label>Email<input type="email" name="email" autocomplete="email" required></label>
-    <label>Phone <span class="opt">(optional)</span><input type="tel" name="phone" autocomplete="tel" inputmode="tel"></label>
+    <label>Phone<input type="tel" name="phone" autocomplete="tel" inputmode="tel" required minlength="10" pattern="[+0-9 ()-]{10,}"></label>
     <label>Which home?
       <select name="stay">
         <option value="Not sure yet">Not sure yet, help me choose</option>
@@ -425,7 +425,7 @@ write('contact/index.html', layout({
     <label>Guests <span class="opt">(optional)</span><input type="number" name="guests" min="1" max="30" inputmode="numeric"></label>
     <label>Your message<textarea name="message" rows="5" required></textarea></label>
     <p class="form-error" role="alert"></p>
-    <button class="btn btn-full" type="submit">Send message</button>
+    <button class="btn btn-full" type="submit">Send request</button>
   </form>
 </section>`,
 }));

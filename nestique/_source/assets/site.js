@@ -95,6 +95,7 @@
           const label = el.closest('label')?.querySelector('.lt')?.firstChild?.textContent?.trim() || el.name;
           if (el.validity.valueMissing) problems.push(`Add ${label.toLowerCase()}.`);
           else if (el.type === 'email') problems.push('Enter an email address like name@example.com.');
+          else if (el.type === 'tel') problems.push('Enter a phone number with at least 10 digits.');
           else if (el.type === 'number') problems.push(`Guests must be between ${el.min} and ${el.max}.`);
           else problems.push(`Check ${label.toLowerCase()}.`);
         }
