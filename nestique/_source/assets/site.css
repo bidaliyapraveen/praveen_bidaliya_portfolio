@@ -587,3 +587,23 @@ h1, h2, h3 { font-variation-settings: "opsz" 96, "wdth" 100; letter-spacing: -0.
 .usp-list h3 { font-size: 21px; font-weight: 650; margin-bottom: 8px; letter-spacing: -0.01em; }
 .usp-list p { color: var(--stone); font-size: 16px; }
 @media (max-width: 860px) { .usp-list { grid-template-columns: 1fr; } }
+
+/* v9: availability calendar */
+.avail { margin-top: 8px; }
+.avail-note { color: var(--stone); margin: 0 0 12px; }
+.avail-nav { display: flex; gap: 8px; justify-content: flex-end; margin-bottom: -36px; position: relative; }
+.avail-nav button { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--line); background: var(--card); color: var(--river); font-size: 20px; line-height: 1; cursor: pointer; }
+.avail-nav button:disabled { opacity: .35; cursor: default; }
+.avail-months { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; }
+.avail-month h3 { font-size: 17px; margin: 6px 0 12px; }
+.avail-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 2px; }
+.avail-grid .dow { font-size: 12px; color: var(--stone); text-align: center; padding-bottom: 4px; }
+.avail-grid button { aspect-ratio: 1; border: 0; border-radius: 50%; background: none; font: inherit; font-size: 14px; color: var(--river); cursor: pointer; }
+.avail-grid button:hover:not(:disabled) { background: var(--moss); }
+.avail-grid button:focus-visible { outline: 2px solid var(--jade); outline-offset: 1px; }
+.avail-grid button:disabled { color: #b3bbb6; cursor: default; }
+.avail-grid button.taken { text-decoration: line-through; color: #b3bbb6; }
+.avail-grid button.in { background: #dfe8e2; border-radius: 0; }
+.avail-grid button.sel { background: var(--river); color: #fff; text-decoration: none; }
+.avail-upd { color: var(--stone); margin-top: 12px; }
+@media (max-width: 640px) { .avail-months { grid-template-columns: 1fr; } .avail-nav { margin-bottom: 0; } }

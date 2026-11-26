@@ -1,0 +1,28 @@
+name: Nestique calendar sync
+on:
+  schedule:
+    - cron: '*/5 * * * *'   # every 5 minutes (the shortest GitHub allows)
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: nestique-calendar
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - name: Pull booking calendars
+        env:
+          NESTIQUE_ICAL: ${{ secrets.NESTIQUE_ICAL }}
+        run: node nestique/_source/sync/calendar.mjs nestique/calendar.json
+      - name: Publish if bookings changed
+        run: |
+          if [ -n "$(git status --porcelain nestique/calendar.json)" ]; then
+            git config user.name "Nestique calendar"
+            git config user.email "actions@users.noreply.github.com"
+            git add nestique/calendar.json
+            git commit -m "Nestique: calendar update"
+            git pull --rebase origin main && git push
+          fi

@@ -198,6 +198,7 @@
     if (!ci.value) { ci.setAttribute('aria-invalid', 'true'); p.push('Add a check-in date.'); }
     if (!co.value) { co.setAttribute('aria-invalid', 'true'); p.push('Add a check-out date.'); }
     if (ci.value && co.value && co.value <= ci.value) { co.setAttribute('aria-invalid', 'true'); p.push('Check-out must be after check-in.'); }
+    if (window.nqClash && window.nqClash()) { co.setAttribute('aria-invalid', 'true'); p.push('Some of these nights are already booked. Pick other dates from the availability calendar.'); }
     if (!g.checkValidity()) { g.setAttribute('aria-invalid', 'true'); p.push(`Guests must be between ${g.min} and ${g.max}.`); }
     if (p.length) { err.textContent = p.join(' '); form.querySelector('[aria-invalid]')?.focus(); return; }
     const n = Math.round((new Date(co.value) - new Date(ci.value)) / 86400000);
@@ -206,4 +207,67 @@
     form.elements.name.focus();
   });
   back.addEventListener('click', () => { form.classList.remove('on-step2'); ci.focus(); });
+})();
+
+// Stay page: live availability calendar from calendar.json (kept in sync automatically)
+(() => {
+  const page = document.querySelector('[data-stay]');
+  const box = document.querySelector('[data-avail]');
+  const form = document.querySelector('#book .book-form');
+  if (!page || !box || !form) return;
+  const slug = page.dataset.stay;
+  const base = (document.querySelector('link[rel=stylesheet][href*="site.css"]')?.getAttribute('href') || '/nestique/assets/site.css').split('assets/')[0];
+  const iso = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+  const blocked = new Set();
+  const { checkin: ci, checkout: co } = form.elements;
+  const err = form.querySelector('.form-error');
+  // a night is blocked if any booking covers it (check-out day itself stays free)
+  const clash = (a, b) => { for (let d = new Date(a + 'T00:00'); iso(d) < b; d.setDate(d.getDate() + 1)) if (blocked.has(iso(d))) return true; return false; };
+  window.nqClash = () => ci.value && co.value && co.value > ci.value && clash(ci.value, co.value);
+  fetch(`${base}calendar.json?t=${Date.now()}`, { cache: 'no-store' }).then((r) => r.ok ? r.json() : null).then((data) => {
+    const ranges = data?.stays?.[slug];
+    if (!ranges) return;
+    ranges.forEach(([a, b]) => { for (let d = new Date(a + 'T00:00'); iso(d) < b; d.setDate(d.getDate() + 1)) blocked.add(iso(d)); });
+    box.hidden = false;
+    box.querySelector('.avail-upd').textContent = 'This calendar updates automatically when a booking is made or cancelled.';
+    const today = iso(new Date());
+    let start = new Date(); start.setDate(1);
+    const months = box.querySelector('.avail-months');
+    const render = () => {
+      months.innerHTML = '';
+      for (let m = 0; m < 2; m++) {
+        const first = new Date(start.getFullYear(), start.getMonth() + m, 1);
+        const wrap = document.createElement('div'); wrap.className = 'avail-month';
+        wrap.innerHTML = `<h3>${first.toLocaleDateString('en-IN', { month: 'long', year: 'numeric' })}</h3><div class="avail-grid">${['M', 'T', 'W', 'T', 'F', 'S', 'S'].map((x) => `<span class="dow">${x}</span>`).join('')}</div>`;
+        const grid = wrap.querySelector('.avail-grid');
+        for (let i = 0; i < (first.getDay() + 6) % 7; i++) grid.append(document.createElement('span'));
+        for (let d = new Date(first); d.getMonth() === first.getMonth(); d.setDate(d.getDate() + 1)) {
+          const k = iso(d); const b = document.createElement('button');
+          b.type = 'button'; b.textContent = d.getDate(); b.dataset.d = k;
+          const past = k < today, taken = blocked.has(k);
+          if (past || taken) { b.disabled = !(taken && ci.value && !co.value && k > ci.value && !clash(ci.value, k)); }
+          if (taken) { b.classList.add('taken'); b.setAttribute('aria-label', `${k}, booked`); }
+          if (ci.value && k === ci.value) b.classList.add('sel');
+          if (co.value && k === co.value) b.classList.add('sel');
+          if (ci.value && co.value && k > ci.value && k < co.value) b.classList.add('in');
+          grid.append(b);
+        }
+        months.append(wrap);
+      }
+      box.querySelector('.avail-prev').disabled = start <= new Date(new Date().getFullYear(), new Date().getMonth(), 1);
+    };
+    months.addEventListener('click', (e) => {
+      const k = e.target.dataset?.d; if (!k) return;
+      if (!ci.value || co.value || k <= ci.value) { ci.value = k; co.value = ''; }
+      else if (clash(ci.value, k)) { ci.value = k; co.value = ''; }
+      else co.value = k;
+      [ci, co].forEach((el) => el.dispatchEvent(new Event('change', { bubbles: true })));
+      if (err) err.textContent = '';
+      render();
+    });
+    box.querySelector('.avail-prev').addEventListener('click', () => { start.setMonth(start.getMonth() - 1); render(); });
+    box.querySelector('.avail-next').addEventListener('click', () => { start.setMonth(start.getMonth() + 1); render(); });
+    [ci, co].forEach((el) => el.addEventListener('change', render));
+    render();
+  }).catch(() => {});
 })();

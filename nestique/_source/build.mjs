@@ -298,6 +298,13 @@ data.stays.forEach((s) => {
         ${s.notIncluded ? `<h3>Not included</h3><ul class="amen-list not">${s.notIncluded.map((a) => `<li><s>${esc(a)}</s></li>`).join('')}</ul>` : ''}
         </div>
       </dialog>` : `<ul class="amen">${s.amenities.map((a) => `<li>${esc(a)}</li>`).join('')}</ul>`}
+      <section class="avail" data-avail hidden aria-labelledby="avail-h">
+        <h2 id="avail-h">Availability</h2>
+        <p class="avail-note">Pick your check-in and check-out days. Crossed-out days are already booked.</p>
+        <div class="avail-nav"><button type="button" class="avail-prev" aria-label="Previous months">‹</button><button type="button" class="avail-next" aria-label="Next months">›</button></div>
+        <div class="avail-months"></div>
+        <p class="avail-upd small"></p>
+      </section>
       <h2>Where it is</h2>
       ${s.nearby ? `<ul class="nearby">${s.nearby.map(([n, d]) => `<li><strong>${esc(n)}</strong>${d ? `<span>${esc(d)}</span>` : ''}</li>`).join('')}</ul>` : ''}
       <p>${s.area === cityName(s.city) ? '' : `${esc(s.area)}, `}${esc(cityName(s.city))}. We send the exact address and directions once your booking is confirmed.</p>
