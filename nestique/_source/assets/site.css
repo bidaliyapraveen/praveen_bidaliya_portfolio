@@ -607,3 +607,12 @@ h1, h2, h3 { font-variation-settings: "opsz" 96, "wdth" 100; letter-spacing: -0.
 .avail-grid button.sel { background: var(--river); color: #fff; text-decoration: none; }
 .avail-upd { color: var(--stone); margin-top: 12px; }
 @media (max-width: 640px) { .avail-months { grid-template-columns: 1fr; } .avail-nav { margin-bottom: 0; } }
+
+/* v10: city tabs stay on one line on phones */
+@media (max-width: 640px) {
+  .results-head { display: block; }
+  .city-tabs { flex-wrap: nowrap; gap: 4px; overflow-x: auto; scrollbar-width: none; }
+  .city-tabs::-webkit-scrollbar { display: none; }
+  .city-tabs button { flex: 1 1 auto; justify-content: center; white-space: nowrap; font-size: 13px; padding: 9px 8px; }
+  .city-tabs button span { display: none; }
+}
