@@ -14,14 +14,9 @@
       "line": "Flats at Doon Square, for slower weeks in the valley."
     },
     {
-      "id": "gurgaon",
-      "name": "Gurgaon",
-      "line": "A city base for work trips and long stays."
-    },
-    {
       "id": "pauri-garhwal",
       "name": "Pauri Garhwal",
-      "line": "A farm stay in a quiet Himalayan village."
+      "line": "A farm stay and a villa in quiet Himalayan villages."
     }
   ],
   "stays": [
@@ -1361,28 +1356,149 @@
       ]
     },
     {
-      "slug": "gurgaon-1bhk",
-      "name": "The Gurgaon Flat",
-      "city": "gurgaon",
-      "area": "Gurgaon",
-      "unit": "1BHK",
-      "type": "1BHK apartment",
-      "summary": "A one-bedroom city flat for work trips and longer stays.",
-      "description": "A calm one-bedroom in Gurgaon with Wi-Fi and a kitchen, so a work trip feels less like a hotel stay.",
-      "guests": null,
-      "bedrooms": 1,
+      "slug": "the-prakashdeep-villa",
+      "oldSlugs": [
+        "gurgaon-1bhk"
+      ],
+      "name": "The Prakashdeep Villa",
+      "tagline": "Breakfast included, valley views and a fire pit",
+      "city": "pauri-garhwal",
+      "area": "Santudhar, near Satpuli",
+      "unit": "Villa",
+      "type": "Villa",
+      "summary": "A peaceful villa in the Pauri Garhwal hills, with breakfast included and room for the whole family.",
+      "description": "Relax with the whole family at this peaceful place to stay in the Garhwal hills, close to the villages of Santudhar, Satpuli, Kirkhu and Patisain. Evenings are for the fire pit and the outdoor dining area, and breakfast is included, with a kitchen for your own meals too.",
+      "guests": "3–4 per room",
+      "bedrooms": null,
       "beds": null,
-      "baths": 1,
+      "baths": null,
       "price": null,
+      "host": {
+        "name": "Prakash",
+        "years": 3
+      },
+      "highlights": [
+        [
+          "In the Pauri Garhwal hills",
+          "Near the villages of Santudhar, Satpuli, Kirkhu and Patisain in the Garhwal hills."
+        ],
+        [
+          "Fire pit with lake access",
+          "A fire pit for evenings outdoors, with lake access and an outdoor dining area."
+        ],
+        [
+          "Breakfast included, plus a kitchen",
+          "Breakfast is included, and there's a kitchen with crockery and cutlery for your own meals too."
+        ]
+      ],
       "amenities": [
+        "Breakfast included",
         "Wi-Fi",
-        "Full kitchen",
-        "Fresh linen and towels",
+        "Kitchen",
+        "Free parking",
+        "Fire pit",
+        "Valley view",
         "Hot water (geyser)"
       ],
-      "mapQuery": "Gurgaon",
-      "images": [],
-      "livingRooms": 1
+      "amenityGroups": [
+        [
+          "Scenic views",
+          [
+            "Valley view"
+          ]
+        ],
+        [
+          "Bathroom",
+          [
+            "Hairdryer",
+            "Hot water (geyser)"
+          ]
+        ],
+        [
+          "Bedroom and laundry",
+          [
+            "Washing machine",
+            "Tumble dryer",
+            "Essentials: towels, bed sheets, soap and toilet paper",
+            "Hangers",
+            "Room-darkening blinds",
+            "Clothes storage"
+          ]
+        ],
+        [
+          "Entertainment",
+          [
+            "TV",
+            "Sound system",
+            "Books and reading material"
+          ]
+        ],
+        [
+          "Home safety",
+          [
+            "Lock on bedroom door",
+            "First aid kit"
+          ]
+        ],
+        [
+          "Internet and office",
+          [
+            "Wi-Fi",
+            "Dedicated workspace"
+          ]
+        ],
+        [
+          "Kitchen and dining",
+          [
+            "Kitchen where you can cook your own meals",
+            "Crockery and cutlery: plates, bowls, cups and other utensils",
+            "Dining table"
+          ]
+        ],
+        [
+          "Location features",
+          [
+            "Lake access: guests can get to a lake by a path"
+          ]
+        ],
+        [
+          "Outdoor",
+          [
+            "Fire pit",
+            "Outdoor dining area"
+          ]
+        ],
+        [
+          "Parking and facilities",
+          [
+            "Free parking on premises"
+          ]
+        ],
+        [
+          "Services",
+          [
+            "Breakfast included",
+            "Pets allowed (assistance animals always allowed)",
+            "Smoking allowed",
+            "Host greets you"
+          ]
+        ]
+      ],
+      "notIncluded": [
+        "Exterior security cameras on property",
+        "Air conditioning",
+        "Smoke alarm",
+        "Carbon monoxide alarm",
+        "Heating"
+      ],
+      "extraRules": [
+        [
+          "Room capacity",
+          "Each room can accommodate up to 3–4 guests. For groups of more than 4, an additional room is provided and the price changes accordingly."
+        ]
+      ],
+      "mapQuery": "Satpuli, Pauri Garhwal",
+      "images": []
     },
     {
       "slug": "the-amelie-villa",

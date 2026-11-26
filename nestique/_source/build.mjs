@@ -179,7 +179,7 @@ write('index.html', layout({
   jsonld: { '@context': 'https://schema.org', '@type': 'Organization', name: 'Nestique', url: SITE, email: data.email },
   body: `
 <section class="hero hero-center">
-  <h1>Stay like you live here.<br><span>Homes by the Ganga and the hills.</span></h1>
+  <h1>Stay like you live here.<br><span>Homes by the Ganga and in the hills.</span></h1>
   <p class="hero-sub">Calm, fully equipped homes in ${cityList}. Pick a stay, send your dates and book directly with us.</p>
 
 </section>
@@ -211,8 +211,8 @@ write('index.html', layout({
     </li>
     <li>
       <span class="usp-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 9a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19.5" r="1"/></svg></span>
-      <h3>Wi-Fi in our city homes</h3>
-      <p>Wi-Fi at our Rishikesh, Dehradun and Gurgaon homes, so you can stream, video-call or get a day's work done.</p>
+      <h3>Wi-Fi to stay connected</h3>
+      <p>Wi-Fi at 7 of our 8 homes, so you can stream, video-call or get a day's work done. The Amelie Villa is the place to switch off.</p>
     </li>
   </ul>
 </section>
