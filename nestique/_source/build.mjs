@@ -280,7 +280,6 @@ data.stays.forEach((s) => {
       <dl class="facts">
         ${facts.map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join('')}
       </dl>
-      ${s.host ? `<p class="host"><span class="host-av" aria-hidden="true">${esc(s.host.name.charAt(0))}</span><span><strong>Hosted by ${esc(s.host.name)}</strong><br>${s.host.years} years hosting</span></p>` : ''}
       ${s.highlights ? `<ul class="highlights">${s.highlights.map(([t, d]) => `<li><strong>${esc(t)}</strong><span>${esc(d)}</span></li>`).join('')}</ul>` : ''}
       <h2>About this home</h2>
       <p>${esc(s.description)}</p>
