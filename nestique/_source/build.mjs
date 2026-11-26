@@ -126,6 +126,7 @@ const row = (s, metaA, metaB) => `
 
 const honeypot = `<p class="hp" aria-hidden="true"><label>Leave this empty <input name="_honey" tabindex="-1" autocomplete="off"></label></p>
         <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_cc" value="praveen.bhardwaj43@gmail.com">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_next" value="${SITE}/thank-you/">`;
 
