@@ -44,6 +44,7 @@ const small = (src) => {
 const photo = (stay, i, cls = '', size = 'sm') => {
   const src0 = stay.images[i];
   const src = src0 && size === 'sm' ? small(src0) : src0;
+  if (src && src0 !== src) return `<img class="${cls}" src="/${esc(src)}" srcset="${BASE}${esc(src)} 900w, ${BASE}${esc(src0)} 2000w" sizes="${i === 0 && size === 'full' ? '(max-width: 640px) 100vw, 60vw' : '(max-width: 640px) 100vw, 33vw'}" alt="${esc(stay.imageAlts?.[i] || `${stay.name}, photo ${i + 1}`)}" loading="${i === 0 ? 'eager' : 'lazy'}" decoding="async">`;
   if (src) return `<img class="${cls}" src="/${esc(src)}" alt="${esc(stay.imageAlts?.[i] || `${stay.name}, photo ${i + 1}`)}" loading="${i === 0 ? 'eager' : 'lazy'}" decoding="async">`;
   return `<div class="ph ${cls}" role="img" aria-label="Photo of ${esc(stay.name)} coming soon"><span>${esc(stay.name.charAt(0))}</span></div>`;
 };
@@ -233,7 +234,7 @@ data.stays.forEach((s) => {
   const others = data.stays.filter((o) => o.slug !== s.slug && o.city === s.city)
     .concat(data.stays.filter((o) => o.city !== s.city)).slice(0, 3);
   const facts = [['Layout', s.type.replace(' apartment', '')], ...(s.type.startsWith('Studio') ? [] : [['Bedrooms', val(s.bedrooms)]]), ...(s.livingRooms ? [['Living room', s.livingRooms]] : []), ['Bathrooms', val(s.baths)], ['Guests', val(s.guests)]].slice(0, 4);
-  const map = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(s.mapQuery)}`;
+  const map = s.mapUrl || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(s.mapQuery)}`;
   const slots = Math.max(5, s.images.length);
   const galleryItems = (s.images.length > 0 && s.images.length < 5 ? [0] : [0, 1, 2, 3, 4]).map((i) => `
     <button type="button" class="g-item ${i === 0 ? 'g-main' : 'g-small'}${i === 4 && s.images.length > 5 ? ' g-tour' : ''}" data-index="${i}" ${i === 4 && s.images.length > 5 ? `data-open-tour aria-label="Show all ${s.images.length} photos of ${esc(s.name)}"` : `aria-label="Open photo ${i + 1} of ${esc(s.name)}"`}${s.images[i] ? '' : ' disabled'}>
@@ -300,7 +301,7 @@ data.stays.forEach((s) => {
       <h2>Where it is</h2>
       ${s.nearby ? `<ul class="nearby">${s.nearby.map(([n, d]) => `<li><strong>${esc(n)}</strong>${d ? `<span>${esc(d)}</span>` : ''}</li>`).join('')}</ul>` : ''}
       <p>${s.area === cityName(s.city) ? '' : `${esc(s.area)}, `}${esc(cityName(s.city))}. We send the exact address and directions once your booking is confirmed.</p>
-      <p><a class="link" href="${map}" target="_blank" rel="noopener">Open the area in Google Maps</a></p>
+      <p><a class="link" href="${map}" target="_blank" rel="noopener">${s.mapUrl ? 'Open the location in Google Maps' : 'Open the area in Google Maps'}</a></p>
       <h2>Things to know</h2>
       <div class="know">
         <div><h3>Check-in and check-out</h3>${s.checkin ? `<p>Check-in ${esc(s.checkin.toLowerCase())}<br>Check-out ${esc(s.checkout.toLowerCase())}</p>` : '<p>Check-in and check-out times are shared with your booking confirmation.</p>'}${s.availability ? `<p>${s.availability.map(esc).join('<br>')}</p>` : ''}</div>
