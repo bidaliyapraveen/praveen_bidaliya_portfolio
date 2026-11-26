@@ -1,1 +1,28 @@
-{"stays":{}}
+{
+ "updated": "2026-11-26T12:00:26.508601Z",
+ "stays": {
+  "cozy-tapovan": [
+   [
+    "2026-11-25",
+    "2026-11-27"
+   ]
+  ],
+  "tapovan-tranquil": [
+   [
+    "2026-11-26",
+    "2026-11-29"
+   ]
+  ],
+  "the-spacious": [],
+  "the-ganga-serenity": [
+   [
+    "2026-11-25",
+    "2026-11-27"
+   ]
+  ],
+  "the-doon-square-suites": [],
+  "doon-vista-studio": [],
+  "the-amelie-villa": [],
+  "the-prakashdeep-villa": []
+ }
+}
