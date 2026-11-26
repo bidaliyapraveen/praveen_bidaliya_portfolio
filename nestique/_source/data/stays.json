@@ -1498,7 +1498,55 @@
         ]
       ],
       "mapQuery": "Satpuli, Pauri Garhwal",
-      "images": []
+      "images": [
+        "photos/the-prakashdeep-villa/terrace-view.jpg",
+        "photos/the-prakashdeep-villa/villa-porch.jpg",
+        "photos/the-prakashdeep-villa/living-room.jpg",
+        "photos/the-prakashdeep-villa/bedroom.jpg",
+        "photos/the-prakashdeep-villa/clouds-valley.jpg",
+        "photos/the-prakashdeep-villa/hills-green.jpg",
+        "photos/the-prakashdeep-villa/bedroom-2.jpg",
+        "photos/the-prakashdeep-villa/garhwali-thali.jpg",
+        "photos/the-prakashdeep-villa/hillside-village.jpg",
+        "photos/the-prakashdeep-villa/entrance-night.jpg",
+        "photos/the-prakashdeep-villa/porch-night.jpg",
+        "photos/the-prakashdeep-villa/name-board.jpg"
+      ],
+      "imageAlts": [
+        "Terrace seating with a view of the hillside village",
+        "The villa porch with plants and garden seating",
+        "Living room with a sectional sofa and glass coffee table",
+        "Bedroom with a king bed and a towel swan",
+        "Clouds rolling through the valley below the villa",
+        "Green trees and the hills around Satpuli",
+        "Bedroom with a yellow wall and a full-length mirror",
+        "A Garhwali thali",
+        "Terraced hillside village across the valley",
+        "The front door lit up in the evening",
+        "The porch arch at night",
+        "The Prakash Deep Villa name board"
+      ],
+      "imageCats": [
+        "Terrace and views",
+        "The villa",
+        "Living room",
+        "Bedrooms",
+        "Terrace and views",
+        "Terrace and views",
+        "Bedrooms",
+        "Food",
+        "Terrace and views",
+        "The villa",
+        "The villa",
+        "The villa"
+      ],
+      "photoCategories": [
+        "Terrace and views",
+        "The villa",
+        "Living room",
+        "Bedrooms",
+        "Food"
+      ]
     },
     {
       "slug": "the-amelie-villa",
