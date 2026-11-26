@@ -17,6 +17,11 @@
       "id": "gurgaon",
       "name": "Gurgaon",
       "line": "A city base for work trips and long stays."
+    },
+    {
+      "id": "pauri-garhwal",
+      "name": "Pauri Garhwal",
+      "line": "A farm stay in a quiet Himalayan village."
     }
   ],
   "stays": [
@@ -40,7 +45,8 @@
         "Kitchen",
         "Free parking",
         "Dedicated workspace",
-        "Private balcony"
+        "Private balcony",
+        "Hot water (geyser)"
       ],
       "amenityGroups": [
         [
@@ -58,8 +64,8 @@
             "Shampoo",
             "Body soap",
             "Bidet",
-            "Hot water",
-            "Shower gel"
+            "Shower gel",
+            "Hot water (geyser)"
           ]
         ],
         [
@@ -261,7 +267,8 @@
         "Kitchen",
         "Free parking",
         "Dedicated workspace",
-        "Private balcony"
+        "Private balcony",
+        "Hot water (geyser)"
       ],
       "amenityGroups": [
         [
@@ -279,8 +286,8 @@
             "Shampoo",
             "Body soap",
             "Bidet",
-            "Hot water",
-            "Shower gel"
+            "Shower gel",
+            "Hot water (geyser)"
           ]
         ],
         [
@@ -506,7 +513,8 @@
         "Kitchen",
         "Free parking",
         "Dedicated workspace",
-        "Self check-in"
+        "Self check-in",
+        "Hot water (geyser)"
       ],
       "amenityGroups": [
         [
@@ -515,7 +523,7 @@
             "Cleaning products",
             "Body soap",
             "Bidet",
-            "Hot water"
+            "Hot water (geyser)"
           ]
         ],
         [
@@ -723,7 +731,8 @@
         "Wi-Fi",
         "Air conditioning",
         "Kitchen",
-        "TV"
+        "TV",
+        "Hot water (geyser)"
       ],
       "amenityGroups": [
         [
@@ -731,7 +740,7 @@
           [
             "Hairdryer",
             "Shampoo",
-            "Hot water"
+            "Hot water (geyser)"
           ]
         ],
         [
@@ -924,7 +933,8 @@
         "Kitchen",
         "Dedicated workspace",
         "Private balcony",
-        "Self check-in"
+        "Self check-in",
+        "Hot water (geyser)"
       ],
       "amenityGroups": [
         [
@@ -932,7 +942,7 @@
           [
             "Hairdryer",
             "Cleaning products",
-            "Hot water"
+            "Hot water (geyser)"
           ]
         ],
         [
@@ -1159,7 +1169,8 @@
         "Kitchen",
         "Dedicated workspace",
         "Private balcony",
-        "Paid parking"
+        "Paid parking",
+        "Hot water (geyser)"
       ],
       "amenityGroups": [
         [
@@ -1177,8 +1188,8 @@
             "Shampoo",
             "Body soap",
             "Bidet",
-            "Hot water",
-            "Shower gel"
+            "Shower gel",
+            "Hot water (geyser)"
           ]
         ],
         [
@@ -1366,11 +1377,131 @@
       "amenities": [
         "Wi-Fi",
         "Full kitchen",
-        "Fresh linen and towels"
+        "Fresh linen and towels",
+        "Hot water (geyser)"
       ],
       "mapQuery": "Gurgaon",
       "images": [],
       "livingRooms": 1
+    },
+    {
+      "slug": "the-amelie-villa",
+      "name": "The Amelie Villa",
+      "tagline": "A farm stay in a peaceful Himalayan village",
+      "city": "pauri-garhwal",
+      "area": "Isoti village",
+      "unit": "Villa",
+      "type": "1BHK farm stay",
+      "summary": "A cozy 1BHK homestay in Isoti village, with a huge terrace, a garden porch and mountain air.",
+      "description": "Bring the whole family to The Amelie Villa, a cozy 1BHK homestay in the peaceful Isoti village of Pauri Garhwal. Surrounded by lush mountains and fresh air, the villa offers spacious rooms with attached bathrooms, a huge terrace and a beautiful garden with a porch to relax and enjoy nature. It's an off-beat getaway for travellers looking for silence, scenic views and a true Himalayan village experience, with lots of room for fun.",
+      "guests": null,
+      "bedrooms": 1,
+      "beds": null,
+      "baths": 1,
+      "price": null,
+      "highlights": [
+        [
+          "In a peaceful Himalayan village",
+          "Set in a quiet Himalayan village in Pauri Garhwal, surrounded by mountains and fresh air."
+        ],
+        [
+          "Expansive outdoor spaces",
+          "A huge terrace, a garden with a porch, a fire pit and an outdoor dining area for enjoying the mountain setting."
+        ],
+        [
+          "Clean space with an attentive host",
+          "Guests highlight the clean, well-maintained property and a helpful, responsive host."
+        ]
+      ],
+      "amenities": [
+        "Kitchen",
+        "Free parking",
+        "Fire pit",
+        "BBQ grill",
+        "Washing machine",
+        "Hot water (geyser)"
+      ],
+      "amenityGroups": [
+        [
+          "Bathroom",
+          [
+            "Hot water (geyser)"
+          ]
+        ],
+        [
+          "Bedroom and laundry",
+          [
+            "Washing machine",
+            "Essentials: towels, bed sheets, soap and toilet paper",
+            "Hangers",
+            "Bed linen",
+            "Extra pillows and blankets",
+            "Room-darkening blinds",
+            "Iron",
+            "Clothes storage"
+          ]
+        ],
+        [
+          "Entertainment",
+          [
+            "TV",
+            "Books and reading material"
+          ]
+        ],
+        [
+          "Home safety",
+          [
+            "Smoke alarm",
+            "Carbon monoxide alarm",
+            "First aid kit"
+          ]
+        ],
+        [
+          "Internet and office",
+          [
+            "Dedicated workspace"
+          ]
+        ],
+        [
+          "Kitchen and dining",
+          [
+            "Kitchen where you can cook your own meals",
+            "Cooking basics: pots and pans, oil, salt and pepper",
+            "Wine glasses",
+            "Dining table"
+          ]
+        ],
+        [
+          "Outdoor",
+          [
+            "Fire pit",
+            "Outdoor dining area",
+            "BBQ grill"
+          ]
+        ],
+        [
+          "Parking and facilities",
+          [
+            "Free parking on premises"
+          ]
+        ],
+        [
+          "Services",
+          [
+            "Pets allowed (assistance animals always allowed)",
+            "Self check-in",
+            "Lockbox"
+          ]
+        ]
+      ],
+      "notIncluded": [
+        "Exterior security cameras on property",
+        "Wi-Fi",
+        "Tumble dryer",
+        "Air conditioning"
+      ],
+      "mapQuery": "Isoti, Pauri Garhwal",
+      "images": []
     }
   ]
 }
